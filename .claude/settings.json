@@ -1,0 +1,10 @@
+{
+  "planModeDefault": true,
+  "denyList": [
+    ".env",
+    "*.env.*",
+    "*.key",
+    "*.pem"
+  ],
+  "plansDir": "plans"
+}
