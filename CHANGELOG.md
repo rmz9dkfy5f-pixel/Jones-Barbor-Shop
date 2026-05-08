@@ -9,6 +9,17 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.8.1] - 2026-05-08 - Full Record
+
+### Fixed
+- `CHANGELOG.md` — backfilled all missing entries from v1.2.0 through v1.8.0, reconstructed undocumented v1.6.0 Local Photography from git history, and wired all version diff links to real tags ([`263dcae`](../../commit/263dcae))
+- `releases/v1.8.1-2026-05-08-Full-Record.md` — release snapshot added
+
+### Tag / Snapshot
+`v1.8.1__full-record__commit-263dcae`
+
+---
+
 ## [1.8.0] - 2026-05-08 - Sharp Eye
 
 ### Added
@@ -164,7 +175,8 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
-[Unreleased]: ../../compare/v1.8.0__sharp-eye__commit-eb79816...HEAD
+[Unreleased]: ../../compare/v1.8.1__full-record__commit-263dcae...HEAD
+[1.8.1]: ../../compare/v1.8.0__sharp-eye__commit-eb79816...v1.8.1__full-record__commit-263dcae
 [1.8.0]: ../../compare/v1.7.2__true-line__commit-299bf11...v1.8.0__sharp-eye__commit-eb79816
 [1.7.2]: ../../compare/v1.7.1__lined-up__commit-98aec0f...v1.7.2__true-line__commit-299bf11
 [1.7.1]: ../../compare/v1.7.0__the-chair__commit-f70fe7f...v1.7.1__lined-up__commit-98aec0f
