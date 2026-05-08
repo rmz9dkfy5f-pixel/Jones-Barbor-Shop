@@ -9,6 +9,17 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.8.2] - 2026-05-08 - Open Book
+
+### Fixed
+- `RELEASE_NOTES.md` — backfilled all 11 releases (v1.0.0 – v1.8.1) including previously undocumented v1.6.0 Local Photography; file now matches the `/releases/` vault in full ([`b6d766b`](../../commit/b6d766b))
+- `releases/v1.8.2-2026-05-08-Open-Book.md` — release snapshot added
+
+### Tag / Snapshot
+`v1.8.2__open-book__commit-b6d766b`
+
+---
+
 ## [1.8.1] - 2026-05-08 - Full Record
 
 ### Fixed
@@ -175,7 +186,8 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
-[Unreleased]: ../../compare/v1.8.1__full-record__commit-263dcae...HEAD
+[Unreleased]: ../../compare/v1.8.2__open-book__commit-b6d766b...HEAD
+[1.8.2]: ../../compare/v1.8.1__full-record__commit-263dcae...v1.8.2__open-book__commit-b6d766b
 [1.8.1]: ../../compare/v1.8.0__sharp-eye__commit-eb79816...v1.8.1__full-record__commit-263dcae
 [1.8.0]: ../../compare/v1.7.2__true-line__commit-299bf11...v1.8.0__sharp-eye__commit-eb79816
 [1.7.2]: ../../compare/v1.7.1__lined-up__commit-98aec0f...v1.7.2__true-line__commit-299bf11
