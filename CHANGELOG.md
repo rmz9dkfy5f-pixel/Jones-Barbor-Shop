@@ -9,6 +9,16 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.8.0] - 2026-05-08 - Sharp Eye
+
+### Added
+- `plans/2026-05-08-full-site-audit.md` — full site diagnostic audit covering runtime behavior, accessibility, security, SEO, performance, structural integrity, and documentation drift across all canonical docs and `index.html`
+
+### Tag / Snapshot
+`v1.8.0__sharp-eye__commit-TBD`
+
+---
+
 ## [1.1.0] - 2026-05-03 - Marquee
 
 ### Added
