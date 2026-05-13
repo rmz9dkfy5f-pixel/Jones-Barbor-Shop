@@ -1911,101 +1911,11 @@
         </div>
 
         <div class="booking-inner">
-          <div class="form-card" data-reveal>
-            <!-- Step indicator -->
-            <div class="form-steps-indicator" aria-label="Form progress">
-              <div class="form-step-dot active" id="dot-1">1</div>
-              <div class="form-step-line" id="line-1"></div>
-              <div class="form-step-dot" id="dot-2">2</div>
-              <div class="form-step-line" id="line-2"></div>
-              <div class="form-step-dot" id="dot-3">3</div>
-            </div>
-
-            <form id="booking-form" novalidate>
-              <!-- Step 1: Who you are -->
-              <div class="form-step active" id="step-1" aria-label="Step 1 of 3 – Your information">
-                <p class="form-step-label">Step 1 of 3 — Who are you?</p>
-                <div class="form-grid form-grid--two" style="margin-top:1rem;">
-                  <div class="form-field">
-                    <label class="form-label" for="name">Full Name <span class="req">*</span></label>
-                    <input class="form-input" type="text" id="name" name="name" required autocomplete="name" />
-                    <p class="form-hint">What should we call you in the chair?</p>
-                  </div>
-                  <div class="form-field">
-                    <label class="form-label" for="phone">Phone <span class="req">*</span></label>
-                    <input class="form-input" type="tel" id="phone" name="phone" required autocomplete="tel" />
-                    <p class="form-hint">We'll text you to confirm.</p>
-                  </div>
-                </div>
-                <div class="form-grid" style="margin-top:1rem;">
-                  <div class="form-field">
-                    <label class="form-label" for="email">Email</label>
-                    <input class="form-input" type="email" id="email" name="email" autocomplete="email" />
-                    <p class="form-hint">Optional – for appointment reminders.</p>
-                  </div>
-                </div>
-                <div class="form-step-nav">
-                  <span></span>
-                  <button class="btn-primary" type="button" id="next-1">Next →</button>
-                </div>
-              </div>
-
-              <!-- Step 2: What you want -->
-              <div class="form-step" id="step-2" aria-label="Step 2 of 3 – Service selection">
-                <p class="form-step-label">Step 2 of 3 — What do you want?</p>
-                <div class="form-grid form-grid--two" style="margin-top:1rem;">
-                  <div class="form-field">
-                    <label class="form-label" for="service">Service <span class="req">*</span></label>
-                    <select class="form-select" id="service" name="service" required>
-                      <option value="">Select a service</option>
-                      <option>Standard Cut</option>
-                      <option>Fade / Taper</option>
-                      <option>Kids Cut</option>
-                      <option>Beard Trim / Shave</option>
-                      <option>Designs &amp; Details</option>
-                      <option>Loc Maintenance / Retwist</option>
-                      <option>Premium Package (Cut + Beard + Hot Towel)</option>
-                    </select>
-                  </div>
-                  <div class="form-field">
-                    <label class="form-label" for="barber">Preferred Barber</label>
-                    <select class="form-select" id="barber" name="barber">
-                      <option value="">No preference</option>
-                      <option>Marcus "J" Jones</option>
-                      <option>Renee Carter</option>
-                      <option>Devin "D" Moore</option>
-                      <option>Trey Collins</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-step-nav">
-                  <button class="btn-secondary" type="button" id="back-2">← Back</button>
-                  <button class="btn-primary" type="button" id="next-2">Next →</button>
-                </div>
-              </div>
-
-              <!-- Step 3: When -->
-              <div class="form-step" id="step-3" aria-label="Step 3 of 3 – Date and notes">
-                <p class="form-step-label">Step 3 of 3 — When &amp; anything else?</p>
-                <div class="form-grid" style="margin-top:1rem;">
-                  <div class="form-field">
-                    <label class="form-label" for="datetime">Preferred Date &amp; Time <span class="req">*</span></label>
-                    <input class="form-input" type="datetime-local" id="datetime" name="datetime" required />
-                    <p class="form-hint">We'll do our best to match your requested time.</p>
-                  </div>
-                  <div class="form-field">
-                    <label class="form-label" for="notes">Notes</label>
-                    <textarea class="form-textarea" id="notes" name="notes" placeholder="Style inspo, reference photos, or anything we should know."></textarea>
-                  </div>
-                </div>
-                <div class="form-step-nav">
-                  <button class="btn-secondary" type="button" id="back-3">← Back</button>
-                  <button class="btn-primary" type="submit">Request Appointment</button>
-                </div>
-                <p id="form-status" role="status" aria-live="polite"></p>
-              </div>
-            </form>
-          </div>
+          <div
+            id="booking-widget"
+            class="form-card"
+            data-reveal
+          ></div>
 
           <aside class="booking-sidebar" aria-label="Booking information" data-reveal data-reveal-delay="2">
             <div class="booking-tip">
@@ -2420,60 +2330,62 @@
       btn.addEventListener("mouseleave", function () { btn.style.transform = ""; });
     })();
 
-    /* ── Multi-step booking form ────────────────────────────────────────── */
-    (function () {
-      var current = 1;
-      var steps   = [1, 2, 3];
-
-      function goTo(n) {
-        steps.forEach(function (s) {
-          document.getElementById("step-" + s).classList.toggle("active", s === n);
-          var dot  = document.getElementById("dot-" + s);
-          dot.classList.toggle("active", s === n);
-          dot.classList.toggle("done",   s < n);
-          if (s < steps.length) {
-            document.getElementById("line-" + s).classList.toggle("done", n > s);
-          }
-        });
-        current = n;
-      }
-
-      function validateStep(n) {
-        var step = document.getElementById("step-" + n);
-        var required = step.querySelectorAll("[required]");
-        var ok = true;
-        required.forEach(function (f) {
-          if (!f.value.trim()) { ok = false; f.focus(); }
-        });
-        return ok;
-      }
-
-      var n1 = document.getElementById("next-1");
-      var n2 = document.getElementById("next-2");
-      var b2 = document.getElementById("back-2");
-      var b3 = document.getElementById("back-3");
-      if (n1) n1.addEventListener("click", function () { if (validateStep(1)) goTo(2); });
-      if (n2) n2.addEventListener("click", function () { if (validateStep(2)) goTo(3); });
-      if (b2) b2.addEventListener("click", function () { goTo(1); });
-      if (b3) b3.addEventListener("click", function () { goTo(2); });
-
-      var form   = document.getElementById("booking-form");
-      var status = document.getElementById("form-status");
-      if (!form || !status) return;
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        if (!validateStep(3)) return;
-        status.textContent  = "Your request is captured. We'll contact you to confirm. (Demo only – connect a backend to go live.)";
-        status.className    = "success";
-        setTimeout(function () { form.reset(); goTo(1); status.textContent = ""; status.className = ""; }, 5000);
-      });
-    })();
-
     /* ── Footer year ────────────────────────────────────────────────────── */
     (function () {
       var el = document.getElementById("year");
       if (el) el.textContent = new Date().getFullYear();
     })();
   </script>
+
+  <!-- ── Jones Barber Shop theme overrides for booking widget ── -->
+  <style>
+    .bw-root {
+      background: #0d0d14;
+      border: 1px solid rgba(245,177,68,.25);
+      color: #f5f1e8;
+      font-family: 'Space Grotesk', sans-serif;
+      max-width: 100%;
+    }
+    .bw-header { background: #13131e; border-bottom: 1px solid rgba(245,177,68,.2); }
+    .bw-header h2, .bw-header p { color: #f5f1e8; }
+    .bw-header p { color: #a09884; }
+    .bw-summary { background: rgba(245,177,68,.08); border-bottom: 1px solid rgba(245,177,68,.15); color: #f5b544; }
+    .bw-date-nav button { background: #13131e; border-color: rgba(245,177,68,.3); color: #f5f1e8; }
+    .bw-date-nav button:hover { background: #1d1d2e; }
+    .bw-date-nav span { color: #f5f1e8; }
+    .bw-slot { background: #13131e; border-color: rgba(245,177,68,.25); color: #f5f1e8; }
+    .bw-slot:hover { background: rgba(245,177,68,.12); border-color: #f5b544; }
+    .bw-slot.bw-slot--selected { background: #f5b544; border-color: #f5b544; color: #050509; }
+    .bw-no-slots { color: #6b6456; }
+    .bw-form-group label { color: #a09884; }
+    .bw-form-group input,
+    .bw-form-group textarea {
+      background: #13131e;
+      border-color: rgba(245,177,68,.25);
+      color: #f5f1e8;
+    }
+    .bw-form-group input:focus,
+    .bw-form-group textarea:focus { border-color: #f5b544; }
+    .bw-btn--primary { background: #e0474c; color: #fff; }
+    .bw-btn--primary:hover:not(:disabled) { background: #c73b3f; }
+    .bw-btn--secondary { background: #1d1d2e; color: #f5f1e8; border: 1px solid rgba(245,177,68,.2); }
+    .bw-btn--secondary:hover:not(:disabled) { background: #26263a; }
+    .bw-error { background: rgba(224,71,76,.1); border-color: rgba(224,71,76,.4); color: #e0474c; }
+    .bw-confirmed h3 { color: #f5b544; }
+    .bw-confirmed p { color: #a09884; }
+    .bw-loading { color: #6b6456; }
+    .bw-countdown { color: #e0474c; }
+    .bw-countdown.bw-countdown--ok { color: #f5b544; }
+  </style>
+
+  <!-- Booking widget — run `cd booking-platform && npx prisma db seed` to get real IDs -->
+  <script
+    src="./assets/booking-widget.js"
+    data-container="booking-widget"
+    data-api-url="http://localhost:3000"
+    data-service-id="REPLACE_WITH_STANDARD_CUT_SERVICE_ID"
+    data-location-id="REPLACE_WITH_LOCATION_ID"
+    data-staff-member-id=""
+  ></script>
 </body>
 </html>
