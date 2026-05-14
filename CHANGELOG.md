@@ -9,6 +9,19 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.9.5] — 2026-05-14
+
+### Added
+- `prompts/Commit notes` — template for GitHub-style commit notes with real hashes, no Co-Authored-By, tag and push convention
+- `prompts/Snapshot` — template for archiving repo snapshots to `E:\Projects\RepoBackups\Jones-Barbor-Shop\` named after commit tag
+- `prompts/Update.md` — template for multi-file docs updates (RELEASE_NOTES, ROADMAP, CHANGELOG, etc.)
+- `prompts/FIRST_PROMPT_BACKEND_DATA_MODEL.md` — Phase 1 backend data model build prompt (TypeScript, Node.js, PostgreSQL, Prisma, 13 models, 10 enums)
+
+### Tag / Snapshot
+`v1.9.5__prompt-vault__commit-dfedf5d`
+
+---
+
 ## [1.9.4] — 2026-05-14
 
 ### Added
@@ -245,7 +258,8 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
-[Unreleased]: ../../compare/v1.9.4__open-record__commit-2039482...HEAD
+[Unreleased]: ../../compare/v1.9.5__prompt-vault__commit-dfedf5d...HEAD
+[1.9.5]: ../../compare/v1.9.4__open-record__commit-2039482...v1.9.5__prompt-vault__commit-dfedf5d
 [1.9.4]: ../../compare/v1.9.3__fix-widget-ids__commit-9b20ce4...v1.9.4__open-record__commit-2039482
 [1.9.3]: ../../compare/v1.9.2__fix-widget-reveal__commit-f6aef01...v1.9.3__fix-widget-ids__commit-9b20ce4
 [1.9.2]: ../../compare/v1.9.1__fix-widget-css__commit-81cb25a...v1.9.2__fix-widget-reveal__commit-f6aef01
