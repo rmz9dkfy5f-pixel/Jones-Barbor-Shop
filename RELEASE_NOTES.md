@@ -4,6 +4,158 @@ All releases, newest first. Individual release files live in [`/releases/`](./re
 
 ---
 
+# v1.9.3 - 2026-05-14 - Fix Widget IDs
+
+> **Fix Widget IDs** — patch wiring the real service ID and location ID into the booking widget, replacing the placeholder values that were preventing live bookings from being created.
+
+## What's Changed
+
+### Fixed
+- `data-service-id` — replaced `REPLACE_WITH_STANDARD_CUT_SERVICE_ID` with real service ID `cmp4e8n600004nocrj81r59y6`
+- `data-location-id` — replaced `REPLACE_WITH_LOCATION_ID` with real location ID `cmp4e8n570002nocre1fi7bvk`
+
+> 1 file changed — `index.html` only
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.9.3__fix-widget-ids__commit-9b20ce4` |
+| Commit | `9b20ce4` |
+| Branch | `main` |
+| Date | 2026-05-14 |
+| Author | CyberAntAI |
+
+## Full Changelog
+
+- [`9b20ce4`](../../commit/9b20ce4) — fix(booking): wire real service and location IDs
+
+**Previous release:** [`f6aef01`](../../commit/f6aef01) — v1.9.2 Fix Widget Reveal
+
+---
+
+# v1.9.2 - 2026-05-13 - Fix Widget Reveal
+
+> **Fix Widget Reveal** — patch removing the `data-reveal` attribute from the booking widget container, which was preventing the widget from rendering on page load.
+
+## What's Changed
+
+### Fixed
+- Removed `data-reveal` from booking widget container — scroll-reveal animation was hiding the widget until scroll, causing it to appear broken on initial load
+
+> 1 file changed — `index.html` only
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.9.2__fix-widget-reveal__commit-f6aef01` |
+| Commit | `f6aef01` |
+| Branch | `main` |
+| Date | 2026-05-13 |
+| Author | CyberAntAI |
+
+## Full Changelog
+
+- [`f6aef01`](../../commit/f6aef01) — fix(booking): remove data-reveal from widget container
+
+**Previous release:** [`81cb25a`](../../commit/81cb25a) — v1.9.1 Fix Widget CSS
+
+---
+
+# v1.9.1 - 2026-05-13 - Fix Widget CSS
+
+> **Fix Widget CSS** — patch correcting visual styling issues introduced by the booking widget embed.
+
+## What's Changed
+
+### Fixed
+- Booking widget container CSS — corrected styles affecting widget display and layout within the `#booking` section
+
+> 1 file changed — `index.html` only
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.9.1__fix-widget-css__commit-81cb25a` |
+| Commit | `81cb25a` |
+| Branch | `main` |
+| Date | 2026-05-13 |
+| Author | CyberAntAI |
+
+## Full Changelog
+
+- [`81cb25a`](../../commit/81cb25a) — fix(booking): add widget CSS
+
+**Previous release:** [`91ad411`](../../commit/91ad411) — v1.9.0 Booking Widget Embed
+
+---
+
+# v1.9.0 - 2026-05-13 - Booking Widget Embed
+
+> **Booking Widget Embed** — the placeholder multi-step form is replaced with a real booking widget. The demo form that captured nothing is removed and a live booking integration is embedded in its place.
+
+## What's Changed
+
+### Added
+- Live booking widget embedded in `#booking` section
+- `data-service-id`, `data-location-id`, `data-staff-member-id` — real service configuration wired to live accounts
+
+### Removed
+- Placeholder 3-step booking form with no submit handler
+- Demo-only success message: `"Your request is captured… (Demo only – connect a backend to go live.)"`
+
+> 1 file changed — `index.html`
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.9.0__booking-widget-embed__commit-91ad411` |
+| Commit | `91ad411` |
+| Branch | `main` |
+| Date | 2026-05-13 |
+| Author | CyberAntAI |
+
+## Full Changelog
+
+- [`91ad411`](../../commit/91ad411) — feat: embed booking widget, replace placeholder form
+
+**Previous release:** [`b6d766b`](../../commit/b6d766b) — v1.8.2 Open Book
+
+---
+
+# v1.8.2 - 2026-05-08 - Open Book
+
+> **Open Book** — the project's public history is now fully readable in one place. This patch backfills `RELEASE_NOTES.md` with all 11 releases (v1.0.0 – v1.8.1), including the previously undocumented v1.6.0 Local Photography, bringing the root-level release notes file into parity with the `/releases/` vault.
+
+## What's Changed
+
+### Fixed
+- `RELEASE_NOTES.md` — backfilled all missing releases from v1.0.0 through v1.8.1
+- `releases/v1.8.2-2026-05-08-Open-Book.md` — release snapshot added
+
+> 1 file changed — `RELEASE_NOTES.md` only
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.8.2__open-book__commit-b6d766b` |
+| Commit | `b6d766b` |
+| Branch | `main` |
+| Date | 2026-05-08 |
+| Author | CyberAntAI |
+
+## Full Changelog
+
+- [`b6d766b`](../../commit/b6d766b) — docs: backfill RELEASE_NOTES.md — all 11 releases documented
+
+**Previous release:** [`263dcae`](../../commit/263dcae) — v1.8.1 Full Record
+
+---
+
 # v1.8.1 - 2026-05-08 - Full Record
 
 > **Full Record** — CHANGELOG.md is now a complete, accurate history of the project. This patch backfills all ten releases (v1.0.0 – v1.8.0) that were missing from the log, reconstructs the previously undocumented v1.6.0 Local Photography release from git history, and wires all version diff links to their real tags.

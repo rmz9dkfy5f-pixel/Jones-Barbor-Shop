@@ -9,45 +9,44 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
-## [1.9.3] - 2026-05-14 - Fix Widget IDs
+## [1.9.3] — 2026-05-14
 
 ### Fixed
-- `data-service-id` — replaced placeholder with real service ID `cmp4e8n600004nocrj01r59y6` ([`9b20ce4`](../../commit/9b20ce4))
-- `data-location-id` — replaced placeholder with real location ID `cmp4e8n570002nocre1fi7bvk` ([`9b20ce4`](../../commit/9b20ce4))
+- `index.html` — replaced placeholder `data-service-id` and `data-location-id` on the widget `<script>` tag with real Neon database IDs from seeded Jones Barber Shop data (Standard Cut: `cmp4e8n600004nocrj81r59y6`, Main Street: `cmp4e8n570002nocre1fi7bvk`) ([`9b20ce4`](../../commit/9b20ce4))
 
 ### Tag / Snapshot
 `v1.9.3__fix-widget-ids__commit-9b20ce4`
 
 ---
 
-## [1.9.2] - 2026-05-13 - Fix Widget Reveal
+## [1.9.2] — 2026-05-14
 
 ### Fixed
-- Removed `data-reveal` from booking widget container — scroll-reveal animation was hiding the widget on initial load ([`f6aef01`](../../commit/f6aef01))
+- `index.html` — removed `data-reveal` attribute from the `#booking-widget` container; the scroll-reveal IntersectionObserver does not fire correctly for React-injected content, leaving the widget invisible at `opacity: 0` ([`f6aef01`](../../commit/f6aef01))
 
 ### Tag / Snapshot
 `v1.9.2__fix-widget-reveal__commit-f6aef01`
 
 ---
 
-## [1.9.1] - 2026-05-13 - Fix Widget CSS
+## [1.9.1] — 2026-05-14
 
 ### Fixed
-- Booking widget container CSS — corrected styles affecting widget display within `#booking` section ([`81cb25a`](../../commit/81cb25a))
+- `assets/booking-widget.css` — added; Vite library builds emit CSS separately from the JS bundle. Only the JS was copied initially, leaving the widget unstyled ([`81cb25a`](../../commit/81cb25a))
+- `index.html` — added `<link rel="stylesheet" href="./assets/booking-widget.css">` to `<head>`
 
 ### Tag / Snapshot
 `v1.9.1__fix-widget-css__commit-81cb25a`
 
 ---
 
-## [1.9.0] - 2026-05-13 - Booking Widget Embed
+## [1.9.0] — 2026-05-13
 
 ### Added
-- Live booking widget embedded in `#booking` section — replaces the non-functional 3-step placeholder form and demo-only success message ([`91ad411`](../../commit/91ad411))
+- `assets/booking-widget.js` — booking widget UMD bundle, built from booking-platform widget source
 
-### Removed
-- Placeholder multi-step booking form with no submit handler
-- Demo-only success message
+### Changed
+- `index.html` — replaced the 3-step placeholder booking form (`form-card` div) with `<div id="booking-widget" class="form-card">` container; removed the dead multi-step form JS handler block; added Jones dark-theme CSS overrides (`.bw-*` class targeting); added widget `<script>` tag with `data-api-url`, `data-container`, `data-service-id`, `data-location-id` attributes ([`91ad411`](../../commit/91ad411))
 
 ### Tag / Snapshot
 `v1.9.0__booking-widget-embed__commit-91ad411`
