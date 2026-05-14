@@ -9,6 +9,51 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.9.3] - 2026-05-14 - Fix Widget IDs
+
+### Fixed
+- `data-service-id` — replaced placeholder with real service ID `cmp4e8n600004nocrj01r59y6` ([`9b20ce4`](../../commit/9b20ce4))
+- `data-location-id` — replaced placeholder with real location ID `cmp4e8n570002nocre1fi7bvk` ([`9b20ce4`](../../commit/9b20ce4))
+
+### Tag / Snapshot
+`v1.9.3__fix-widget-ids__commit-9b20ce4`
+
+---
+
+## [1.9.2] - 2026-05-13 - Fix Widget Reveal
+
+### Fixed
+- Removed `data-reveal` from booking widget container — scroll-reveal animation was hiding the widget on initial load ([`f6aef01`](../../commit/f6aef01))
+
+### Tag / Snapshot
+`v1.9.2__fix-widget-reveal__commit-f6aef01`
+
+---
+
+## [1.9.1] - 2026-05-13 - Fix Widget CSS
+
+### Fixed
+- Booking widget container CSS — corrected styles affecting widget display within `#booking` section ([`81cb25a`](../../commit/81cb25a))
+
+### Tag / Snapshot
+`v1.9.1__fix-widget-css__commit-81cb25a`
+
+---
+
+## [1.9.0] - 2026-05-13 - Booking Widget Embed
+
+### Added
+- Live booking widget embedded in `#booking` section — replaces the non-functional 3-step placeholder form and demo-only success message ([`91ad411`](../../commit/91ad411))
+
+### Removed
+- Placeholder multi-step booking form with no submit handler
+- Demo-only success message
+
+### Tag / Snapshot
+`v1.9.0__booking-widget-embed__commit-91ad411`
+
+---
+
 ## [1.8.2] - 2026-05-08 - Open Book
 
 ### Fixed
@@ -186,7 +231,11 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
-[Unreleased]: ../../compare/v1.8.2__open-book__commit-b6d766b...HEAD
+[Unreleased]: ../../compare/v1.9.3__fix-widget-ids__commit-9b20ce4...HEAD
+[1.9.3]: ../../compare/v1.9.2__fix-widget-reveal__commit-f6aef01...v1.9.3__fix-widget-ids__commit-9b20ce4
+[1.9.2]: ../../compare/v1.9.1__fix-widget-css__commit-81cb25a...v1.9.2__fix-widget-reveal__commit-f6aef01
+[1.9.1]: ../../compare/v1.9.0__booking-widget-embed__commit-91ad411...v1.9.1__fix-widget-css__commit-81cb25a
+[1.9.0]: ../../compare/v1.8.2__open-book__commit-b6d766b...v1.9.0__booking-widget-embed__commit-91ad411
 [1.8.2]: ../../compare/v1.8.1__full-record__commit-263dcae...v1.8.2__open-book__commit-b6d766b
 [1.8.1]: ../../compare/v1.8.0__sharp-eye__commit-eb79816...v1.8.1__full-record__commit-263dcae
 [1.8.0]: ../../compare/v1.7.2__true-line__commit-299bf11...v1.8.0__sharp-eye__commit-eb79816
