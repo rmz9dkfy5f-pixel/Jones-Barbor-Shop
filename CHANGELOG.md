@@ -9,6 +9,21 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.9.4] — 2026-05-14
+
+### Added
+- `COMMIT_NOTES.md` — documents commit message format, tag convention, version rules, and push protocol for this repository
+- `PROGRESS_NOTE.md` — snapshot of live deployment status, released versions, open audit items, and next recommended work as of v1.9.4
+
+### Changed
+- `RELEASE_NOTES.md` — backfilled v1.8.2 and v1.9.0–v1.9.3 entries; file now covers all releases v1.0.0–v1.9.3
+- `ROADMAP.md` — added Completed section (v1.4.0 docs, v1.7.0 redesign, v1.9.0–v1.9.3 widget, live deployment); removed resolved Active and Planned items
+
+### Tag / Snapshot
+`v1.9.4__open-record__commit-2039482`
+
+---
+
 ## [1.9.3] — 2026-05-14
 
 ### Fixed
@@ -230,7 +245,8 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
-[Unreleased]: ../../compare/v1.9.3__fix-widget-ids__commit-9b20ce4...HEAD
+[Unreleased]: ../../compare/v1.9.4__open-record__commit-2039482...HEAD
+[1.9.4]: ../../compare/v1.9.3__fix-widget-ids__commit-9b20ce4...v1.9.4__open-record__commit-2039482
 [1.9.3]: ../../compare/v1.9.2__fix-widget-reveal__commit-f6aef01...v1.9.3__fix-widget-ids__commit-9b20ce4
 [1.9.2]: ../../compare/v1.9.1__fix-widget-css__commit-81cb25a...v1.9.2__fix-widget-reveal__commit-f6aef01
 [1.9.1]: ../../compare/v1.9.0__booking-widget-embed__commit-91ad411...v1.9.1__fix-widget-css__commit-81cb25a
