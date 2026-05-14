@@ -14,14 +14,16 @@ Completed work (see CHANGELOG.md), technical architecture (see ARCHITECTURE.md),
 
 ---
 
-## Active
+## Completed
 
-- Complete initial documentation scaffold
-- Validate site on GitHub Pages
+- v1.4.0 — Initial documentation scaffold (CLAUDE.md, docs/, plans/, CHANGELOG.md, RELEASE_NOTES.md)
+- v1.7.0 — Full cinematic redesign (The Chair)
+- v1.9.0 — Real booking widget embedded (booking-platform UMD bundle)
+- v1.9.3 — Booking widget live with real service and location IDs
+- Site deployed to jones-barbor-shop.craftandconscious.com (IONOS VPS, Nginx)
 
 ## Planned
 
-- Connect booking form to a real backend or booking service (e.g. Square, Booksy)
 - Replace Pexels placeholder images with real shop photography
 - Add real barber headshots
 - Add real shop address and map embed
