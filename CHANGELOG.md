@@ -9,6 +9,16 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.9.6] — 2026-05-15
+
+### Fixed
+- `index.html` — `data-api-url` corrected from `http://localhost:3000` to `http://74.208.9.49:3001`; the widget was unable to reach any API on the live site because the dev server address was never replaced ([`0fbc068`](../../commit/0fbc068))
+
+### Tag / Snapshot
+`v1.9.6__fix-api-url__commit-0fbc068`
+
+---
+
 ## [1.9.5] — 2026-05-14
 
 ### Added
@@ -258,7 +268,8 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
-[Unreleased]: ../../compare/v1.9.5__prompt-vault__commit-dfedf5d...HEAD
+[Unreleased]: ../../compare/v1.9.6__fix-api-url__commit-0fbc068...HEAD
+[1.9.6]: ../../compare/v1.9.5__prompt-vault__commit-dfedf5d...v1.9.6__fix-api-url__commit-0fbc068
 [1.9.5]: ../../compare/v1.9.4__open-record__commit-2039482...v1.9.5__prompt-vault__commit-dfedf5d
 [1.9.4]: ../../compare/v1.9.3__fix-widget-ids__commit-9b20ce4...v1.9.4__open-record__commit-2039482
 [1.9.3]: ../../compare/v1.9.2__fix-widget-reveal__commit-f6aef01...v1.9.3__fix-widget-ids__commit-9b20ce4
