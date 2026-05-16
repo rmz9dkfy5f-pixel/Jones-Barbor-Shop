@@ -9,6 +9,27 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.9.7] — 2026-05-15
+
+### Added
+- `CONTEXT.md` — stable project background: what this project is, stack, design constraints, canonical docs ([`82bf7c7`](../../commit/82bf7c7))
+- `STATUS.md` — present project state: current version, live deployment, what's next, open audit items, blockers ([`82bf7c7`](../../commit/82bf7c7))
+
+### Changed
+- `RELEASE_NOTES.md` — backfilled v1.9.4, v1.9.5, and v1.9.6 entries; file now covers v1.0.0–v1.9.6 ([`82bf7c7`](../../commit/82bf7c7))
+- `ROADMAP.md` — added v1.9.6 to Completed ([`82bf7c7`](../../commit/82bf7c7))
+- `PROGRESS_NOTE.md` — replaced placeholder with full session-end summary (v1.9.4–v1.9.6) ([`82bf7c7`](../../commit/82bf7c7))
+- `prompts/Update.md` — added CONTEXT.md and STATUS.md to the target file list ([`82bf7c7`](../../commit/82bf7c7))
+- `prompts/Snapshot` — added Mac path option alongside Windows path ([`82bf7c7`](../../commit/82bf7c7))
+
+### Removed
+- `prompts/FIRST_PROMPT_BACKEND_DATA_MODEL.md` — moved out of this repo (belongs in booking-platform) ([`82bf7c7`](../../commit/82bf7c7))
+
+### Tag / Snapshot
+`v1.9.7__full-context__commit-82bf7c7`
+
+---
+
 ## [1.9.6] — 2026-05-15
 
 ### Fixed
@@ -268,7 +289,8 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
-[Unreleased]: ../../compare/v1.9.6__fix-api-url__commit-0fbc068...HEAD
+[Unreleased]: ../../compare/v1.9.7__full-context__commit-82bf7c7...HEAD
+[1.9.7]: ../../compare/v1.9.6__fix-api-url__commit-0fbc068...v1.9.7__full-context__commit-82bf7c7
 [1.9.6]: ../../compare/v1.9.5__prompt-vault__commit-dfedf5d...v1.9.6__fix-api-url__commit-0fbc068
 [1.9.5]: ../../compare/v1.9.4__open-record__commit-2039482...v1.9.5__prompt-vault__commit-dfedf5d
 [1.9.4]: ../../compare/v1.9.3__fix-widget-ids__commit-9b20ce4...v1.9.4__open-record__commit-2039482
