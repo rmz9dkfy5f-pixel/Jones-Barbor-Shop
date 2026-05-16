@@ -21,6 +21,7 @@ Completed work (see CHANGELOG.md), technical architecture (see ARCHITECTURE.md),
 - v1.9.0 — Real booking widget embedded (booking-platform UMD bundle)
 - v1.9.3 — Booking widget live with real service and location IDs
 - Site deployed to jones-barbor-shop.craftandconscious.com (IONOS VPS, Nginx)
+- v1.9.6 — Booking widget data-api-url corrected to deployed VPS address
 
 ## Planned
 

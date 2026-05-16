@@ -4,6 +4,101 @@ All releases, newest first. Individual release files live in [`/releases/`](./re
 
 ---
 
+# v1.9.6 - 2026-05-15 - Fix API URL
+
+> **Fix API URL** — corrects the booking widget `data-api-url` from `http://localhost:3000` to the deployed IONOS VPS address `http://74.208.9.49:3001`.
+
+## What's Changed
+
+### Fixed
+- `index.html` — `data-api-url` updated from `http://localhost:3000` to `http://74.208.9.49:3001`
+
+> 1 file changed — `index.html`
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.9.6__fix-api-url__commit-0fbc068` |
+| Commit | `0fbc068` |
+| Branch | `main` |
+| Date | 2026-05-15 |
+| Author | CyberAntAI |
+
+## Full Changelog
+
+- [`0fbc068`](../../commit/0fbc068) — fix(booking): point widget data-api-url to deployed VPS API
+
+**Previous release:** [`dfedf5d`](../../commit/dfedf5d) — v1.9.5 Prompt Vault
+
+---
+
+# v1.9.5 - 2026-05-14 - Prompt Vault
+
+> **Prompt Vault** — adds `prompts/` directory with four operational templates used to drive recurring Claude Code tasks.
+
+## What's Changed
+
+### Added
+- `prompts/Commit notes` — template for GitHub-style commit notes with real hashes, no Co-Authored-By, tag and push convention
+- `prompts/Snapshot` — template for archiving repo snapshots
+- `prompts/Update.md` — template for multi-file docs updates
+- `prompts/FIRST_PROMPT_BACKEND_DATA_MODEL.md` — Phase 1 backend data model build prompt (TypeScript, Node.js, PostgreSQL, Prisma, 13 models, 10 enums)
+
+> 4 files added — `prompts/`
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.9.5__prompt-vault__commit-dfedf5d` |
+| Commit | `dfedf5d` |
+| Branch | `main` |
+| Date | 2026-05-14 |
+| Author | CyberAntAI |
+
+## Full Changelog
+
+- [`dfedf5d`](../../commit/dfedf5d) — docs(prompts): add prompt vault — commit notes, snapshot, update, and backend data model templates
+
+**Previous release:** [`2039482`](../../commit/2039482) — v1.9.4 Open Record
+
+---
+
+# v1.9.4 - 2026-05-14 - Open Record
+
+> **Open Record** — docs update bringing all records current: backfilled release notes, updated roadmap, and added commit convention and progress snapshot files.
+
+## What's Changed
+
+### Added
+- `COMMIT_NOTES.md` — commit message format, tag convention, version rules, push protocol
+- `PROGRESS_NOTE.md` — live deployment status, release history, open audit items, next steps
+
+### Changed
+- `RELEASE_NOTES.md` — backfilled v1.8.2 and v1.9.0–v1.9.3
+- `ROADMAP.md` — Completed section added; stale Active/Planned items removed
+
+> 3 files changed, 1 updated
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.9.4__open-record__commit-2039482` |
+| Commit | `2039482` |
+| Branch | `main` |
+| Date | 2026-05-14 |
+| Author | CyberAntAI |
+
+## Full Changelog
+
+- [`2039482`](../../commit/2039482) — docs: open record — update roadmap, add commit notes and progress note
+
+**Previous release:** [`9b20ce4`](../../commit/9b20ce4) — v1.9.3 Fix Widget IDs
+
+---
+
 # v1.9.3 - 2026-05-14 - Fix Widget IDs
 
 > **Fix Widget IDs** — patch wiring the real service ID and location ID into the booking widget, replacing the placeholder values that were preventing live bookings from being created.
