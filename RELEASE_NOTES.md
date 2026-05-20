@@ -4,6 +4,30 @@ All releases, newest first. Individual release files live in [`/releases/`](./re
 
 ---
 
+# v1.9.8 - 2026-05-19 - Widget Render
+
+> **Widget Render** — fixes the booking widget crashing silently in the browser due to `process.env.NODE_ENV` shipping as a live runtime reference in the UMD bundle. Rebuilt the bundle with the value inlined at build time, added a visible offline fallback, and applied dark-theme CSS overrides so the widget is readable on the site's dark surface.
+
+## What's Changed
+
+### Fixed
+- `assets/booking-widget.js` — rebuilt with `process.env.NODE_ENV` replaced at build time; widget no longer throws `ReferenceError: process is not defined`; bundle size reduced from 483 kB to 154 kB
+- `assets/booking-widget.css` — rebuilt from latest source; dark-theme overrides prepended for `#12121e` surface
+- `index.html` — `data-api-url` restored to `http://74.208.9.49:3001`; seed IDs updated
+
+### Added
+- `index.html` — `.bw-fallback`: shows phone CTA when booking API is unreachable
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.9.8__widget-render__commit-2975d62` |
+| Commit | `2975d62` |
+| Date | 2026-05-19 |
+
+---
+
 # v1.9.6 - 2026-05-15 - Fix API URL
 
 > **Fix API URL** — corrects the booking widget `data-api-url` from `http://localhost:3000` to the deployed IONOS VPS address `http://74.208.9.49:3001`.

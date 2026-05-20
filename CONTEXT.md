@@ -11,7 +11,7 @@ A static single-page marketing and booking site for Jones Barber Shop, a communi
 - Single HTML file: `index.html` (2,400+ lines — all CSS and JS embedded)
 - No framework, no build step, no backend
 - Vanilla HTML5 / CSS3 / JS with CSS custom properties
-- Booking widget: UMD bundle (`assets/booking-widget.js`) from the `booking-platform` project
+- Booking widget: UMD bundle (`assets/booking-widget.js`) from the `booking-platform` project — production-safe build with `process.env.NODE_ENV` inlined at build time
 - Booking API: Fastify / TypeScript / Prisma / Neon PostgreSQL (separate repo: `booking-platform`)
 - Hosting: IONOS VPS (74.208.9.49), Nginx, port 80
 - Domain: jones-barbor-shop.craftandconscious.com

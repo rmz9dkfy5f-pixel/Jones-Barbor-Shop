@@ -9,6 +9,21 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.9.8] — 2026-05-19
+
+### Fixed
+- `assets/booking-widget.js` — rebuilt with `process.env.NODE_ENV` replaced at build time; widget no longer crashes silently in browser ([`2975d62`](../../commit/2975d62))
+- `assets/booking-widget.css` — rebuilt from latest source; dark-theme overrides prepended so widget UI is visible on `#12121e` surface ([`2975d62`](../../commit/2975d62))
+- `index.html` — `data-api-url` restored to `http://74.208.9.49:3001`; seed IDs updated to current database values ([`2975d62`](../../commit/2975d62))
+
+### Added
+- `index.html` — `.bw-fallback` HTML + CSS: displays phone CTA when booking API is unreachable instead of a blank box ([`2975d62`](../../commit/2975d62))
+
+### Tag / Snapshot
+`v1.9.8__widget-render__commit-2975d62`
+
+---
+
 ## [1.9.7] — 2026-05-15
 
 ### Added

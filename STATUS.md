@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-05-15. Current version: v1.9.7.
+Last updated: 2026-05-19. Current version: v1.9.8.
 
 ## Live
 
@@ -10,9 +10,9 @@ Last updated: 2026-05-15. Current version: v1.9.7.
 
 ## Where We Left Off
 
-v1.9.7 — docs update: created CONTEXT.md and STATUS.md, backfilled RELEASE_NOTES.md through v1.9.6, updated ROADMAP.md and PROGRESS_NOTE.md, updated prompts/.
+v1.9.8 — booking widget rendering fixed. The UMD bundle was crashing silently in the browser (`ReferenceError: process is not defined`) because `process.env.NODE_ENV` was shipped as a live runtime reference. Fixed `widget/vite.config.ts` in booking-platform, rebuilt the bundle (154 kB, was 483 kB), added `.bw-fallback` offline CTA, applied dark-theme CSS overrides, restored `data-api-url` to VPS.
 
-Before that: v1.9.6 fixed booking widget `data-api-url` (was `http://localhost:3000`, now `http://74.208.9.49:3001`). The booking-platform Fastify API was built locally and a production `.env.production` was created. The API has NOT yet been deployed to the VPS.
+Before that: v1.9.7 added CONTEXT.md and STATUS.md. v1.9.6 corrected `data-api-url` to the deployed VPS address. The booking-platform API is NOT yet deployed to the VPS.
 
 ## What's Next
 
