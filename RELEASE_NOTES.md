@@ -4,6 +4,25 @@ All releases, newest first. Individual release files live in [`/releases/`](./re
 
 ---
 
+# v1.9.9 - 2026-05-19 - Dev API URL
+
+> **Dev API URL** — reverts `data-api-url` to `http://localhost:3000` for local dev. The previous release incorrectly set it to the unreachable VPS address, breaking the widget locally.
+
+## What's Changed
+
+### Fixed
+- `index.html` — `data-api-url` reverted from `http://74.208.9.49:3001` to `http://localhost:3000`
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.9.9__dev-api-url__commit-eaa2b40` |
+| Commit | `eaa2b40` |
+| Date | 2026-05-19 |
+
+---
+
 # v1.9.8 - 2026-05-19 - Widget Render
 
 > **Widget Render** — fixes the booking widget crashing silently in the browser due to `process.env.NODE_ENV` shipping as a live runtime reference in the UMD bundle. Rebuilt the bundle with the value inlined at build time, added a visible offline fallback, and applied dark-theme CSS overrides so the widget is readable on the site's dark surface.

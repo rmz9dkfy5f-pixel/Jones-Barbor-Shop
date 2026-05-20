@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-05-19. Current version: v1.9.8.
+Last updated: 2026-05-19. Current version: v1.9.9.
 
 ## Live
 
@@ -10,9 +10,9 @@ Last updated: 2026-05-19. Current version: v1.9.8.
 
 ## Where We Left Off
 
-v1.9.8 — booking widget rendering fixed. The UMD bundle was crashing silently in the browser (`ReferenceError: process is not defined`) because `process.env.NODE_ENV` was shipped as a live runtime reference. Fixed `widget/vite.config.ts` in booking-platform, rebuilt the bundle (154 kB, was 483 kB), added `.bw-fallback` offline CTA, applied dark-theme CSS overrides, restored `data-api-url` to VPS.
+v1.9.9 — reverted `data-api-url` to `http://localhost:3000` for local dev (v1.9.8 had incorrectly set it to the VPS address, breaking the widget locally).
 
-Before that: v1.9.7 added CONTEXT.md and STATUS.md. v1.9.6 corrected `data-api-url` to the deployed VPS address. The booking-platform API is NOT yet deployed to the VPS.
+Before that: v1.9.8 fixed the booking widget UMD bundle (`process.env.NODE_ENV` crash), added offline fallback UI, applied dark-theme CSS overrides. The booking-platform API is NOT yet deployed to the VPS.
 
 ## What's Next
 

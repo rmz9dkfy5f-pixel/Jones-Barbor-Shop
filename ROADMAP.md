@@ -23,6 +23,7 @@ Completed work (see CHANGELOG.md), technical architecture (see ARCHITECTURE.md),
 - Site deployed to jones-barbor-shop.craftandconscious.com (IONOS VPS, Nginx)
 - v1.9.6 — Booking widget data-api-url corrected to deployed VPS address
 - v1.9.8 — Booking widget rendering fixed (process.env bundle fix, offline fallback, dark theme CSS)
+- v1.9.9 — Reverted data-api-url to localhost:3000 for local dev
 
 ## Planned
 

@@ -9,6 +9,16 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.9.9] — 2026-05-19
+
+### Fixed
+- `index.html` — reverted `data-api-url` to `http://localhost:3000` for local dev; previous release (`v1.9.8`) incorrectly set it to the VPS address ([`eaa2b40`](../../commit/eaa2b40))
+
+### Tag / Snapshot
+`v1.9.9__dev-api-url__commit-eaa2b40`
+
+---
+
 ## [1.9.8] — 2026-05-19
 
 ### Fixed

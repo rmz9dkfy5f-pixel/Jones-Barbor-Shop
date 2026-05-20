@@ -1,31 +1,26 @@
 # Progress Note
 
-Session ended 2026-05-19. Covered v1.9.8.
+Session ended 2026-05-19. Covered v1.9.8 and v1.9.9.
 
 ---
 
 ## Milestone
 
 **v1.9.8** — Booking widget rendering fixed.
+**v1.9.9** — data-api-url reverted to localhost:3000 for local dev.
 
 ---
 
 ## Tasks Completed
 
-- Diagnosed blank booking section: widget div was empty, fallback text not showing
-- Found root cause: `booking-widget.js` UMD bundle shipped `process.env.NODE_ENV` as a live runtime reference — browsers have no `process` global, causing silent `ReferenceError` before React initialised
-- Fixed `widget/vite.config.ts` in booking-platform repo: added `define: { 'process.env.NODE_ENV': '"production"' }`
-- Rebuilt widget: bundle reduced from 483 kB to 154 kB (dev React excluded), `process.env` count = 0
-- Added `.bw-fallback` HTML + CSS to `#booking-widget`: shows "Online booking is loading… call (919) 555-1234 or walk in" when API is unreachable instead of a blank box
-- Prepended dark-theme CSS overrides to `booking-widget.css`: slots, inputs, loading state, error state now visible on `#12121e` surface
-- Seeded local database (`npx prisma db seed` in booking-platform)
-- Added `JWT_SECRET` to booking-platform `.env`
-- Started local dev server (`npm run dev` on port 3000) for local widget testing
-- Restored `data-api-url` to `http://74.208.9.49:3001` before production commit
-- Updated `data-service-id` and `data-location-id` to current seed values
-- Tagged and pushed v1.9.8 to GitHub
-- Tagged and pushed Booking Platform v0.10.20 (vite.config.ts fix)
-- Created repo snapshots for both repos
+- Rebuilt `booking-widget.js` with `process.env.NODE_ENV` inlined at build time (was crashing silently in browser)
+- Added `.bw-fallback` HTML + CSS to `#booking-widget`: phone CTA shown when API is offline
+- Prepended dark-theme CSS overrides to `booking-widget.css`
+- Updated seed IDs in `index.html`
+- Tagged and pushed v1.9.8
+- Reverted `data-api-url` back to `http://localhost:3000` (v1.9.8 had incorrectly set it to VPS address)
+- Tagged and pushed v1.9.9
+- Updated all .md docs for v1.9.9
 
 ---
 
@@ -34,6 +29,8 @@ Session ended 2026-05-19. Covered v1.9.8.
 | Hash | Message |
 |---|---|
 | `2975d62` | fix(booking): rebuild widget bundle, add offline fallback, restore VPS API URL |
+| `78b9bde` | docs(release): v1.9.8 Widget Render — changelog and snapshot |
+| `eaa2b40` | fix(booking): revert data-api-url to localhost:3000 for local dev |
 
 ---
 
@@ -41,7 +38,8 @@ Session ended 2026-05-19. Covered v1.9.8.
 
 | Tag | Applied To |
 |---|---|
-| `v1.9.8__widget-render__commit-2975d62` | docs commit (release notes) |
+| `v1.9.8__widget-render__commit-2975d62` | `78b9bde` (release commit) |
+| `v1.9.9__dev-api-url__commit-eaa2b40` | docs commit (this release) |
 
 ---
 
@@ -49,16 +47,16 @@ Session ended 2026-05-19. Covered v1.9.8.
 
 | File | Change |
 |---|---|
-| `index.html` | Fallback div added, dark CSS added, API URL restored, seed IDs updated |
+| `index.html` | Fallback div, dark CSS, seed IDs, api-url revert |
 | `assets/booking-widget.js` | Rebuilt (process.env fix, 154 kB) |
-| `assets/booking-widget.css` | Rebuilt + dark theme overrides prepended |
-| `CHANGELOG.md` | v1.9.8 entry added |
-| `RELEASE_NOTES.md` | v1.9.8 entry prepended |
+| `assets/booking-widget.css` | Rebuilt + dark theme overrides |
+| `CHANGELOG.md` | v1.9.8 and v1.9.9 entries added |
+| `RELEASE_NOTES.md` | v1.9.8 and v1.9.9 entries prepended |
 | `releases/v1.9.8-2026-05-19-Widget-Render.md` | Created |
-| `ROADMAP.md` | v1.9.8 added to Completed |
+| `releases/v1.9.9-2026-05-19-Dev-API-URL.md` | Created |
+| `ROADMAP.md` | v1.9.8 and v1.9.9 added to Completed |
 | `PROGRESS_NOTE.md` | This file |
-| `CONTEXT.md` | Widget note updated |
-| `STATUS.md` | Updated to v1.9.8 |
+| `STATUS.md` | Updated to v1.9.9 |
 
 ---
 
@@ -69,5 +67,6 @@ Session ended 2026-05-19. Covered v1.9.8.
    - SSH: npm install --omit=dev → npx prisma generate → pm2 start dist/server.js --name booking-api
    - sudo ufw allow 3001/tcp
    - Verify: curl http://localhost:3001/health → {"status":"ok"}
-2. Upload updated index.html to /var/www/jones-barbor-shop/
-3. Test booking widget end-to-end on live site
+2. Once API is on VPS: update index.html data-api-url to http://74.208.9.49:3001
+3. Upload updated index.html to /var/www/jones-barbor-shop/
+4. Test booking widget end-to-end on live site
