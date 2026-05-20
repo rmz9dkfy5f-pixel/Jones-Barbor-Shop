@@ -1130,6 +1130,19 @@
       border-radius: var(--radius-lg);
       padding: 1.8rem 1.5rem;
     }
+    .bw-fallback {
+      padding: 2rem 1.5rem;
+      color: var(--color-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .bw-fallback a {
+      color: var(--color-gold);
+      text-decoration: none;
+    }
+    #booking-widget:has(.bw-root) .bw-fallback {
+      display: none;
+    }
     .form-steps-indicator {
       display: flex;
       align-items: center;
@@ -1912,10 +1925,12 @@
         </div>
 
         <div class="booking-inner">
-          <div
-            id="booking-widget"
-            class="form-card"
-          ></div>
+          <div id="booking-widget" class="form-card">
+            <div class="bw-fallback">
+              <p>Online booking is loading&hellip;</p>
+              <p>To book now, call <a href="tel:+19195551234">(919) 555-1234</a> or walk in.</p>
+            </div>
+          </div>
 
           <aside class="booking-sidebar" aria-label="Booking information" data-reveal data-reveal-delay="2">
             <div class="booking-tip">
@@ -2378,13 +2393,13 @@
     .bw-countdown.bw-countdown--ok { color: #f5b544; }
   </style>
 
-  <!-- Booking widget — run `cd booking-platform && npx prisma db seed` to get real IDs -->
+  <!-- Booking widget — production: data-api-url="http://74.208.9.49:3001" with prod IDs -->
   <script
     src="./assets/booking-widget.js"
     data-container="booking-widget"
     data-api-url="http://74.208.9.49:3001"
-    data-service-id="cmp4e8n600004nocrj81r59y6"
-    data-location-id="cmp4e8n570002nocre1fi7bvk"
+    data-service-id="cmpdi5j490004mcj3fdta732c"
+    data-location-id="cmpdi5j3z0002mcj329edkdxa"
     data-staff-member-id=""
   ></script>
 </body>
