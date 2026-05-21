@@ -1,4 +1,13 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(cp /Users/ant/Projects/GitHub/Booking-Platform/widget/dist/booking-widget.umd.cjs /Users/ant/Projects/GitHub/Jones-Barbor-Shop/assets/booking-widget.js)",
+      "Bash(cp /Users/ant/Projects/GitHub/Booking-Platform/widget/dist/booking-widget.css /Users/ant/Projects/GitHub/Jones-Barbor-Shop/assets/booking-widget.css)"
+    ]
+  },
   "planModeDefault": true,
   "denyList": [
     ".env",
