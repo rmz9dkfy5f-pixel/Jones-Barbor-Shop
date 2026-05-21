@@ -24,6 +24,7 @@ Completed work (see CHANGELOG.md), technical architecture (see ARCHITECTURE.md),
 - v1.9.6 — Booking widget data-api-url corrected to deployed VPS address
 - v1.9.8 — Booking widget rendering fixed (process.env bundle fix, offline fallback, dark theme CSS)
 - v1.9.9 — Reverted data-api-url to localhost:3000 for local dev
+- v1.10.0 — 3-step booking widget redesign: customer info → service/barber selection → slots + notes (Three Step)
 
 ## Planned
 

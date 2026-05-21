@@ -8,7 +8,7 @@ A static single-page marketing and booking site for Jones Barber Shop, a communi
 
 ## Stack
 
-- Single HTML file: `index.html` (2,400+ lines — all CSS and JS embedded)
+- Single HTML file: `index.html` (2,400+ lines — all CSS and JS embedded, plus inline `<style>` block for booking widget dark theme overrides)
 - No framework, no build step, no backend
 - Vanilla HTML5 / CSS3 / JS with CSS custom properties
 - Booking widget: UMD bundle (`assets/booking-widget.js`) from the `booking-platform` project — production-safe build with `process.env.NODE_ENV` inlined at build time

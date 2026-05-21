@@ -1,45 +1,57 @@
 # Progress Note
 
-Session ended 2026-05-19. Covered v1.9.8 and v1.9.9.
+Session ended 2026-05-20. Covered v1.10.0 Three Step.
 
 ---
 
 ## Milestone
 
-**v1.9.8** — Booking widget rendering fixed.
-**v1.9.9** — data-api-url reverted to localhost:3000 for local dev.
+**v1.10.0 Three Step** — booking widget redesigned to a 3-step form matching the mobile app UX.
 
 ---
 
 ## Tasks Completed
 
-- Rebuilt `booking-widget.js` with `process.env.NODE_ENV` inlined at build time (was crashing silently in browser)
-- Added `.bw-fallback` HTML + CSS to `#booking-widget`: phone CTA shown when API is offline
-- Prepended dark-theme CSS overrides to `booking-widget.css`
-- Updated seed IDs in `index.html`
-- Tagged and pushed v1.9.8
-- Reverted `data-api-url` back to `http://localhost:3000` (v1.9.8 had incorrectly set it to VPS address)
-- Tagged and pushed v1.9.9
-- Updated all .md docs for v1.9.9
+- Added `GET /catalog/options?locationId=X` endpoint to Booking Platform API (services + staff)
+- Redesigned widget from slot-picker-first to 3-step flow:
+  - Step 1: Full Name, Phone, Email (name + phone required)
+  - Step 2: Service dropdown + Preferred Barber dropdown (loaded live from `/catalog/options`)
+  - Step 3: Available time slots with date nav + notes textarea + REQUEST APPOINTMENT
+- Gold step indicator dots with connecting lines — active dot fills gold, done dot fades gold
+- 12-hour AM/PM time format on slot grid (timezone-aware via `res.timezone` from availability API)
+- Rebuilt widget bundle and copied to `assets/booking-widget.js` and `assets/booking-widget.css`
+- Updated dark theme: gold labels (`#f5b544`), warm cream text (`#f0ede4`), gold-tinted borders
+- Moved dark theme overrides to end of `booking-widget.css` so cascade order works correctly
+- Fixed step indicator misalignment: `line-height: 1`, `align-self: center`, `min-width/height: 28px`
+- Removed redundant `.form-card` padding (`#booking-widget { padding: 0 }`)
+- Removed nested `.bw-root` border/radius (`.form-card` provides outer border)
+- Added `select` and `option` dark theme styles to index.html override block
+- Fixed local API: killed stale process, restarted with updated routes, seeded local database
+- Tagged and pushed v1.10.0
 
 ---
 
-## Git Commits
+## Git Commits (Jones-Barbor-Shop)
 
 | Hash | Message |
 |---|---|
-| `2975d62` | fix(booking): rebuild widget bundle, add offline fallback, restore VPS API URL |
-| `78b9bde` | docs(release): v1.9.8 Widget Render — changelog and snapshot |
-| `eaa2b40` | fix(booking): revert data-api-url to localhost:3000 for local dev |
+| `17a9246` | feat(booking): update widget bundle — 3-step form redesign |
+| `67a1a19` | fix(booking): 12-hr time format, gold/cream theme, step indicator alignment |
+
+## Git Commits (Booking-Platform)
+
+| Hash | Message |
+|---|---|
+| `bc8a4d6` | feat(catalog): add public /catalog/options endpoint for services and staff listing |
+| `3aac2ae` | feat(widget): redesign to 3-step flow — customer info, service picker, slot and notes |
 
 ---
 
 ## Git Tags
 
-| Tag | Applied To |
+| Tag | Repo |
 |---|---|
-| `v1.9.8__widget-render__commit-2975d62` | `78b9bde` (release commit) |
-| `v1.9.9__dev-api-url__commit-eaa2b40` | docs commit (this release) |
+| `v1.10.0__three-step__commit-67a1a19` | Jones-Barbor-Shop (applied to docs commit) |
 
 ---
 
@@ -47,16 +59,15 @@ Session ended 2026-05-19. Covered v1.9.8 and v1.9.9.
 
 | File | Change |
 |---|---|
-| `index.html` | Fallback div, dark CSS, seed IDs, api-url revert |
-| `assets/booking-widget.js` | Rebuilt (process.env fix, 154 kB) |
-| `assets/booking-widget.css` | Rebuilt + dark theme overrides |
-| `CHANGELOG.md` | v1.9.8 and v1.9.9 entries added |
-| `RELEASE_NOTES.md` | v1.9.8 and v1.9.9 entries prepended |
-| `releases/v1.9.8-2026-05-19-Widget-Render.md` | Created |
-| `releases/v1.9.9-2026-05-19-Dev-API-URL.md` | Created |
-| `ROADMAP.md` | v1.9.8 and v1.9.9 added to Completed |
+| `index.html` | Step indicator fixes, padding/border overrides, select styles |
+| `assets/booking-widget.js` | Rebuilt — 3-step flow, 12-hr time |
+| `assets/booking-widget.css` | Rebuilt + gold/cream dark theme, overrides at end |
+| `CHANGELOG.md` | v1.10.0 entry added |
+| `RELEASE_NOTES.md` | v1.10.0 entry prepended |
+| `ROADMAP.md` | v1.10.0 added to Completed |
+| `STATUS.md` | Updated to v1.10.0 |
 | `PROGRESS_NOTE.md` | This file |
-| `STATUS.md` | Updated to v1.9.9 |
+| `CONTEXT.md` | Updated to v1.10.0 |
 
 ---
 
@@ -67,6 +78,6 @@ Session ended 2026-05-19. Covered v1.9.8 and v1.9.9.
    - SSH: npm install --omit=dev → npx prisma generate → pm2 start dist/server.js --name booking-api
    - sudo ufw allow 3001/tcp
    - Verify: curl http://localhost:3001/health → {"status":"ok"}
-2. Once API is on VPS: update index.html data-api-url to http://74.208.9.49:3001
-3. Upload updated index.html to /var/www/jones-barbor-shop/
+2. Update index.html `data-api-url` to `http://74.208.9.49:3001` for production
+3. Upload updated index.html + assets to /var/www/jones-barbor-shop/
 4. Test booking widget end-to-end on live site

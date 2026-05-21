@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-05-19. Current version: v1.9.9.
+Last updated: 2026-05-20. Current version: v1.10.0.
 
 ## Live
 
@@ -10,9 +10,7 @@ Last updated: 2026-05-19. Current version: v1.9.9.
 
 ## Where We Left Off
 
-v1.9.9 — reverted `data-api-url` to `http://localhost:3000` for local dev (v1.9.8 had incorrectly set it to the VPS address, breaking the widget locally).
-
-Before that: v1.9.8 fixed the booking widget UMD bundle (`process.env.NODE_ENV` crash), added offline fallback UI, applied dark-theme CSS overrides. The booking-platform API is NOT yet deployed to the VPS.
+v1.10.0 Three Step — booking widget redesigned to a 3-step flow: (1) customer info, (2) service + preferred barber dropdowns loaded live from the API, (3) available time slots with 12-hour AM/PM format + notes. Dark theme updated to gold labels and warm cream text. Step indicator alignment fixed. `data-api-url` is still `http://localhost:3000` for local dev.
 
 ## What's Next
 
@@ -21,8 +19,9 @@ Before that: v1.9.8 fixed the booking widget UMD bundle (`process.env.NODE_ENV` 
    - SSH: npm install --omit=dev → npx prisma generate → pm2 start dist/server.js --name booking-api
    - sudo ufw allow 3001/tcp
    - Verify: curl http://localhost:3001/health → {"status":"ok"}
-2. Upload updated index.html to /var/www/jones-barbor-shop/
-3. Test booking widget end-to-end on live site
+2. Update index.html `data-api-url` to `http://74.208.9.49:3001` for production
+3. Upload updated index.html to /var/www/jones-barbor-shop/
+4. Test booking widget end-to-end on live site
 
 ## Open Audit Items
 

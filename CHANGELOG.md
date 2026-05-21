@@ -9,6 +9,25 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.10.0] — 2026-05-20
+
+### Added
+- `assets/booking-widget.js` — booking widget redesigned to 3-step flow: (1) customer info, (2) service + preferred barber dropdowns loaded live from API, (3) available time slots + notes ([`17a9246`](../../commit/17a9246))
+- `assets/booking-widget.js` — new `GET /catalog/options?locationId=X` API endpoint integration; services and barbers are fetched dynamically, not hardcoded ([`17a9246`](../../commit/17a9246))
+- `assets/booking-widget.js` — 12-hour AM/PM time format on slot grid (e.g. "9:00 AM", "2:30 PM") ([`67a1a19`](../../commit/67a1a19))
+
+### Changed
+- `assets/booking-widget.css` — dark theme color scheme: gold labels (`#f5b544`), warm cream text (`#f0ede4`), gold-tinted borders; overrides moved to end of file so cascade order is correct ([`67a1a19`](../../commit/67a1a19))
+- `index.html` — booking widget `<style>` block: `#booking-widget { padding: 0 }` removes redundant outer padding; `.bw-root { border: none }` removes nested inner border (`.form-card` provides the outer border); `select` and `option` elements styled for dark theme ([`67a1a19`](../../commit/67a1a19))
+
+### Fixed
+- `index.html` — step indicator misalignment: `line-height: 1` corrects Space Grotesk vertical offset inside dot circles; `align-self: center` anchors the 2px connecting line in the flex row ([`67a1a19`](../../commit/67a1a19))
+
+### Tag / Snapshot
+`v1.10.0__three-step__commit-67a1a19`
+
+---
+
 ## [1.9.9] — 2026-05-19
 
 ### Fixed

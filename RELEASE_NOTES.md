@@ -4,6 +4,35 @@ All releases, newest first. Individual release files live in [`/releases/`](./re
 
 ---
 
+# v1.10.0 - 2026-05-20 - Three Step
+
+> **Three Step** — redesigns the booking widget from a slot-picker-first flow to a clean 3-step form: enter your info, pick your service and barber, then choose an available time. Services and barbers are loaded live from the API. Slots show 12-hour AM/PM time. Dark theme color scheme updated to gold labels and warm cream text.
+
+## What's Changed
+
+### Added
+- Booking widget 3-step flow: (1) Full name / phone / email, (2) service dropdown + preferred barber dropdown (live from API), (3) available time slots + notes textarea
+- `/catalog/options?locationId=X` API endpoint integration — services and barbers fetched dynamically
+- 12-hour AM/PM time format on the slot grid
+
+### Changed
+- Dark theme color scheme: gold labels (`#f5b544`), warm cream text (`#f0ede4`), gold-tinted input borders
+- Widget CSS overrides moved to end of `booking-widget.css` so cascade order is correct
+- `index.html` style block: `#booking-widget { padding: 0 }`, `.bw-root { border: none }`, `select`/`option` dark theme styling
+
+### Fixed
+- Step indicator misalignment: `line-height: 1` + `align-self: center` correct Space Grotesk font offset in dot circles
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.10.0__three-step__commit-67a1a19` |
+| Commits | `17a9246`, `67a1a19` |
+| Date | 2026-05-20 |
+
+---
+
 # v1.9.9 - 2026-05-19 - Dev API URL
 
 > **Dev API URL** — reverts `data-api-url` to `http://localhost:3000` for local dev. The previous release incorrectly set it to the unreachable VPS address, breaking the widget locally.
