@@ -2354,9 +2354,12 @@
 
   <!-- ── Jones Barber Shop theme overrides for booking widget ── -->
   <style>
+    /* Remove form-card padding — .bw-root fills flush, .form-card provides the outer border */
+    #booking-widget { padding: 0; }
     .bw-root {
       background: #0d0d14;
-      border: 1px solid rgba(245,177,68,.25);
+      border: none;
+      border-radius: 0;
       color: #f5f1e8;
       font-family: 'Space Grotesk', sans-serif;
       max-width: 100%;
@@ -2364,6 +2367,9 @@
     .bw-header { background: #13131e; border-bottom: 1px solid rgba(245,177,68,.2); }
     .bw-header h2, .bw-header p { color: #f5f1e8; }
     .bw-header p { color: #a09884; }
+    /* Step indicator alignment — Space Grotesk has line-height > 1 which offsets dot numbers */
+    .bw-step-dot { line-height: 1; min-width: 28px; min-height: 28px; }
+    .bw-step-line { align-self: center; }
     .bw-summary { background: rgba(245,177,68,.08); border-bottom: 1px solid rgba(245,177,68,.15); color: #f5b544; }
     .bw-date-nav button { background: #13131e; border-color: rgba(245,177,68,.3); color: #f5f1e8; }
     .bw-date-nav button:hover { background: #1d1d2e; }
@@ -2374,13 +2380,16 @@
     .bw-no-slots { color: #6b6456; }
     .bw-form-group label { color: #a09884; }
     .bw-form-group input,
-    .bw-form-group textarea {
+    .bw-form-group textarea,
+    .bw-form-group select {
       background: #13131e;
       border-color: rgba(245,177,68,.25);
       color: #f5f1e8;
     }
+    .bw-form-group select option { background: #13131e; color: #f5f1e8; }
     .bw-form-group input:focus,
-    .bw-form-group textarea:focus { border-color: #f5b544; }
+    .bw-form-group textarea:focus,
+    .bw-form-group select:focus { border-color: #f5b544; }
     .bw-btn--primary { background: #e0474c; color: #fff; }
     .bw-btn--primary:hover:not(:disabled) { background: #c73b3f; }
     .bw-btn--secondary { background: #1d1d2e; color: #f5f1e8; border: 1px solid rgba(245,177,68,.2); }
