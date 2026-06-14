@@ -9,6 +9,21 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.11.0] — 2026-06-14
+
+### Added
+- `DONE_CRITERIA.md` — defines done criteria for every slice type (feature, debug, design, migration) ([`c047563`](../../commit/c047563))
+- `CHANGE_CONTROL.md` — defines what AI agents may edit freely, what requires approval, and what is never automatic ([`c047563`](../../commit/c047563))
+- `REPO_HEALTH_CHECK.md` — baseline snapshot of repo stack, important files, risks, and verification status ([`c047563`](../../commit/c047563))
+- `ROLLBACK_PLAN.md` — escape path template for migrations and risky changes ([`c047563`](../../commit/c047563))
+- `PROJECT_RISK_REGISTER.md` — open and closed risk log, seeded with known Jones Barber Shop risks ([`c047563`](../../commit/c047563))
+- `ai/agents/AGENT_REVIEW_GATES.md` — mandatory gate rules for sub-agent invocation by change type ([`c047563`](../../commit/c047563))
+
+### Tag / Snapshot
+`v1.11.0__quality-gates__commit-c047563`
+
+---
+
 ## [1.10.0] — 2026-05-20
 
 ### Added

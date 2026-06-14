@@ -4,6 +4,30 @@ All releases, newest first. Individual release files live in [`/releases/`](./re
 
 ---
 
+# v1.11.0 - 2026-06-14 - Quality Gates
+
+> **Quality Gates** — installs the Project Starter Kit v3.3 quality gate layer. Six new files define done criteria, change control rules, repo health baseline, rollback procedures, risk register, and agent review gates. No existing files were modified.
+
+## What's Changed
+
+### Added
+- `DONE_CRITERIA.md` — done criteria for every slice type
+- `CHANGE_CONTROL.md` — change control rules for AI agents
+- `REPO_HEALTH_CHECK.md` — repo health baseline snapshot
+- `ROLLBACK_PLAN.md` — rollback procedures for risky changes
+- `PROJECT_RISK_REGISTER.md` — risk log seeded with Jones Barber Shop risks
+- `ai/agents/AGENT_REVIEW_GATES.md` — agent review gate rules by change type
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.11.0__quality-gates__commit-c047563` |
+| Commits | `c047563` |
+| Date | 2026-06-14 |
+
+---
+
 # v1.10.0 - 2026-05-20 - Three Step
 
 > **Three Step** — redesigns the booking widget from a slot-picker-first flow to a clean 3-step form: enter your info, pick your service and barber, then choose an available time. Services and barbers are loaded live from the API. Slots show 12-hour AM/PM time. Dark theme color scheme updated to gold labels and warm cream text.
