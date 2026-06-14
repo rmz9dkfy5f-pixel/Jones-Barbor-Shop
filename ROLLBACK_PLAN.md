@@ -8,32 +8,26 @@ Use this file to preserve an escape path for migrations, risky changes, dependen
 |---|---|
 | Date | 2026-06-14 |
 | Branch | main |
-| Current commit before change | TBD |
-| Change type | v3.3 starter-kit migration (additive only) |
+| Commit at audit completion | `b7ef9d8` |
+| Change type | Post-audit hygiene (B–F) — .nojekyll, favicon, doc updates, archive marker |
 | Risk level | Low |
 | Person/agent making change | Claude Code |
 
 ## Pre-Change State
 
-```bash
-# Record before changing files
-git status --short
-git branch --show-current
-git rev-parse --short HEAD
-```
+v3.3 migration complete as of v1.14.0. All four groups (Quality Gates, Root Tracking, AI System, Sub-Agents) integrated and committed. This rollback plan now covers post-audit hygiene slices only.
 
-## Files Added
+## Files Added (audit slices B–F)
 
-- `DONE_CRITERIA.md`
-- `CHANGE_CONTROL.md`
-- `REPO_HEALTH_CHECK.md`
-- `ROLLBACK_PLAN.md`
-- `PROJECT_RISK_REGISTER.md`
-- `ai/agents/AGENT_REVIEW_GATES.md`
+- `.nojekyll` — disables Jekyll on GitHub Pages
+- `Documents/README.md` — marks Documents/ as legacy archive
 
-## Files Modified
+## Files Modified (audit slices B–F)
 
-- None
+- `index.html` — SVG favicon added to `<head>` (3 lines)
+- `docs/VERSIONING.md` — release history table extended to v1.14.0
+- `REPO_HEALTH_CHECK.md` — snapshot and risks updated to post-audit state
+- `ROLLBACK_PLAN.md` — this file updated to reflect completed migration
 
 ## Files Moved
 
@@ -45,9 +39,10 @@ git rev-parse --short HEAD
 
 ## Files Not Touched Intentionally
 
-- `index.html` — source code, not part of this migration slice
-- All existing `docs/` files — not overwritten
-- `ARCHITECTURE.md`, `CLAUDE.md`, `CHANGELOG.md` — not overwritten
+- All site source code beyond favicon line in `index.html`
+- `docs/STRATEGY.md`, `docs/DESIGN.md`, `docs/CONTENT.md`, `docs/ACCESSIBILITY.md`, `docs/PERFORMANCE.md`, `docs/TESTING.md`, `docs/DEPLOYMENT.md`
+- `ARCHITECTURE.md`, `CLAUDE.md`, `CHANGELOG.md`, `AGENTS.md`
+- `.claude/agents/` — all 7 agent specs unchanged
 
 ## Rollback Method
 
@@ -88,8 +83,8 @@ git revert <commit-hash>
 
 ## Final Rollback Status
 
-- [ ] Rollback not needed
-- [x] Rollback plan ready
+- [x] Rollback not needed — all changes additive or low-risk doc updates
+- [ ] Rollback plan ready
 - [ ] Rollback completed
 - [ ] Rollback failed
 - [ ] Needs human review

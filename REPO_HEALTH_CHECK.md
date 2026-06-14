@@ -9,9 +9,10 @@ Use this before major work, after starter-kit migration, and before cleanup/refa
 | Date | 2026-06-14 |
 | Repo name | Jones-Barbor-Shop |
 | Branch | main |
-| Latest commit | TBD |
-| Starter kit version | v3.3 |
-| Health status | Unknown |
+| Latest commit | `b7ef9d8` |
+| Current version | v1.14.0 (Sub-Agents) |
+| Starter kit version | v3.3 (fully integrated) |
+| Health status | Healthy — post-audit |
 
 ## Detected Stack
 
@@ -67,23 +68,27 @@ Use this before major work, after starter-kit migration, and before cleanup/refa
 
 | Risk | Level | Evidence | Mitigation | Status |
 |---|---|---|---|---|
-| Placeholder content (address, phone, images) | High | `index.html`, `docs/CONTENT.md` | Replace before production launch | Open |
+| Placeholder content (address, phone, barber names, images) | High | `index.html`, `docs/CONTENT.md`, `plans/open-decisions.md` | Replace before production launch | Open |
 | No automated tests | Medium | No test toolchain | Manual QA per `docs/TESTING.md` | Open |
+| Booking widget API URL set to localhost | Medium | `index.html` `data-api-url` attribute | Must be updated to production URL before launch | Open |
 | Single-file architecture limits modularity | Low | `index.html` is 2,400+ lines | Accepted constraint per `ARCHITECTURE.md` | Accepted |
+| `Jones Barbor Shop.css` at repo root | Low | 68 KB legacy file, not linked | Do not link or edit; remove with explicit plan approval | Open |
 
 ## Missing Information
 
-- Confirmed production domain / DNS setup
-- Real address, phone number, barber photo releases
+- Confirmed production domain and DNS setup
+- Real shop address, phone number, and barber photo releases
+- Production booking API URL
 
 ## Recommended Next Cleanup
 
-- Replace placeholder content before launch
-- Add real contact details
+- Replace all placeholder content (address, phone, barber info) before launch
+- Set production API URL in `index.html` before deploying booking widget
+- Add real photography when available
 
 ## Recommended Next Slice
 
-- Complete v3.3 migration (Groups 2–4)
+- Content: replace placeholder address, phone, and barber info in `index.html`
 
 ## Notes
 
