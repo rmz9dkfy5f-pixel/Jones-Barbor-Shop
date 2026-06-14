@@ -9,6 +9,23 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.13.0] — 2026-06-14
+
+### Added
+- `ai/README.md` — AI engineering memory folder guide ([`c0164b3`](../../commit/c0164b3))
+- `ai/ai.config.json` — AI memory config: paths, rules, version ([`c0164b3`](../../commit/c0164b3))
+- `ai/agents/AGENT_HANDOFF_TEMPLATE.md` — sub-agent invocation template ([`c0164b3`](../../commit/c0164b3))
+- `ai/agents/AGENT_ROSTER.md` — available agents and when to use them ([`c0164b3`](../../commit/c0164b3))
+- `ai/agents/AGENT_USAGE_RULES.md` — agent guardrails, workflow, hard limits ([`c0164b3`](../../commit/c0164b3))
+- `ai/checkpoints/`, `ai/patterns/`, `ai/prompts/`, `ai/reports/` — folder placeholders ([`c0164b3`](../../commit/c0164b3))
+- `ai/sessions/debug/`, `ai/sessions/designs/`, `ai/sessions/features/`, `ai/sessions/optimization/` — session folder placeholders ([`c0164b3`](../../commit/c0164b3))
+- `ai/templates/` — 7 session templates: ai_prompt, api_design, checkpoint, debug, design, feature, pattern ([`c0164b3`](../../commit/c0164b3))
+
+### Tag / Snapshot
+`v1.13.0__ai-system__commit-c0164b3`
+
+---
+
 ## [1.12.0] — 2026-06-14
 
 ### Added

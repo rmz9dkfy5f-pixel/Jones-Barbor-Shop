@@ -4,6 +4,30 @@ All releases, newest first. Individual release files live in [`/releases/`](./re
 
 ---
 
+# v1.13.0 - 2026-06-14 - AI System
+
+> **AI System** — installs the Project Starter Kit v3.3 Group 3 ai/ folder system. Adds 20 files: README, config, 3 agent support docs, 8 folder placeholders, and 7 session/checkpoint/prompt/pattern templates. No existing files were modified.
+
+## What's Changed
+
+### Added
+- `ai/README.md` — folder guide with naming conventions, rules, and quality gate integration
+- `ai/ai.config.json` — AI memory config
+- `ai/agents/AGENT_HANDOFF_TEMPLATE.md`, `AGENT_ROSTER.md`, `AGENT_USAGE_RULES.md` — agent support docs
+- `ai/checkpoints/`, `ai/patterns/`, `ai/prompts/`, `ai/reports/` — folder placeholders
+- `ai/sessions/debug/`, `designs/`, `features/`, `optimization/` — session folder placeholders
+- `ai/templates/` — 7 templates: ai_prompt, api_design, checkpoint, debug, design, feature, pattern
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.13.0__ai-system__commit-c0164b3` |
+| Commits | `c0164b3` |
+| Date | 2026-06-14 |
+
+---
+
 # v1.12.0 - 2026-06-14 - Root Tracking
 
 > **Root Tracking** — installs the Project Starter Kit v3.3 Group 2 layer: 10 root-level tracking files that give any AI agent or contributor an immediate orientation to project state, decisions, backlog, and history. No existing files were modified.

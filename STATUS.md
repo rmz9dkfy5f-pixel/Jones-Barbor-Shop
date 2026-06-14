@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-06-14. Current version: v1.12.0.
+Last updated: 2026-06-14. Current version: v1.13.0.
 
 ## Live
 
@@ -10,13 +10,12 @@ Last updated: 2026-06-14. Current version: v1.12.0.
 
 ## Where We Left Off
 
-v1.12.0 Root Tracking — Project Starter Kit v3.3 Group 2 installed. Ten root tracking files added: START_HERE.md, PROJECT_BRIEF.md, PLAN.md, PHASE_GATES.md, BACKLOG.md, SLICE_REVIEWS.md, LESSONS_LEARNED.md, AGENTS.md, PROGRESS_NOTES.md, DECISION_LOG.md. No existing files were modified. `data-api-url` is still `http://localhost:3000` for local dev.
+v1.13.0 AI System — Project Starter Kit v3.3 Group 3 installed. 20 files added to the ai/ folder: README, config, 3 agent support docs, 8 folder placeholders, and 7 session/checkpoint/prompt/pattern templates. No existing files were modified. `data-api-url` is still `http://localhost:3000` for local dev.
 
 ## What's Next
 
-### v3.3 Migration (In Progress)
-- Group 3 — ai/ folder system: `ai/README.md`, `ai/ai.config.json`, `ai/sessions/`, `ai/checkpoints/`, `ai/prompts/`, `ai/patterns/`, `ai/reports/`
-- Group 4 — `.claude/agents/` sub-agent roster: `repo-cartographer`, `project-steward`, `slice-planner`, `debugger`, `test-verifier`, `security-reviewer`, `docs-promoter`
+### v3.3 Migration (Final Group)
+- Group 4 — `.claude/agents/` sub-agent roster: `repo-cartographer.md`, `project-steward.md`, `slice-planner.md`, `debugger.md`, `test-verifier.md`, `security-reviewer.md`, `docs-promoter.md`
 
 ### Production Deployment (Pending)
 1. Deploy booking-platform API to VPS (PM2 on port 3001)
