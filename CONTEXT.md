@@ -36,3 +36,9 @@ A static single-page marketing and booking site for Jones Barber Shop, a communi
 | `CHANGELOG.md` | Version history |
 | `RELEASE_NOTES.md` | GitHub-style release summaries |
 | `STATUS.md` | Current project state (changes each session) |
+| `DONE_CRITERIA.md` | Definition of done for every slice type |
+| `CHANGE_CONTROL.md` | What AI agents may edit freely vs. requires approval |
+| `REPO_HEALTH_CHECK.md` | Baseline repo health snapshot |
+| `ROLLBACK_PLAN.md` | Rollback procedures for risky changes |
+| `PROJECT_RISK_REGISTER.md` | Open and closed risk log |
+| `ai/agents/AGENT_REVIEW_GATES.md` | Mandatory agent gate rules by change type |

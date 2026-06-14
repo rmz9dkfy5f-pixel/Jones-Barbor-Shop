@@ -25,6 +25,7 @@ Completed work (see CHANGELOG.md), technical architecture (see ARCHITECTURE.md),
 - v1.9.8 — Booking widget rendering fixed (process.env bundle fix, offline fallback, dark theme CSS)
 - v1.9.9 — Reverted data-api-url to localhost:3000 for local dev
 - v1.10.0 — 3-step booking widget redesign: customer info → service/barber selection → slots + notes (Three Step)
+- v1.11.0 — Project Starter Kit v3.3 quality gate layer installed (DONE_CRITERIA, CHANGE_CONTROL, REPO_HEALTH_CHECK, ROLLBACK_PLAN, PROJECT_RISK_REGISTER, ai/agents/AGENT_REVIEW_GATES)
 
 ## Planned
 

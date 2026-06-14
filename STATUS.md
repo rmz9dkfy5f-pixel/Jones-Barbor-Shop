@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-05-20. Current version: v1.10.0.
+Last updated: 2026-06-14. Current version: v1.11.0.
 
 ## Live
 
@@ -10,17 +10,19 @@ Last updated: 2026-05-20. Current version: v1.10.0.
 
 ## Where We Left Off
 
-v1.10.0 Three Step — booking widget redesigned to a 3-step flow: (1) customer info, (2) service + preferred barber dropdowns loaded live from the API, (3) available time slots with 12-hour AM/PM format + notes. Dark theme updated to gold labels and warm cream text. Step indicator alignment fixed. `data-api-url` is still `http://localhost:3000` for local dev.
+v1.11.0 Quality Gates — Project Starter Kit v3.3 Group 1 installed. Six quality gate files added to the repo root and `ai/agents/`: `DONE_CRITERIA.md`, `CHANGE_CONTROL.md`, `REPO_HEALTH_CHECK.md`, `ROLLBACK_PLAN.md`, `PROJECT_RISK_REGISTER.md`, `ai/agents/AGENT_REVIEW_GATES.md`. No existing files were modified. `data-api-url` is still `http://localhost:3000` for local dev.
 
 ## What's Next
 
+### v3.3 Migration (In Progress)
+- Group 2 — 10 root tracking files: `START_HERE.md`, `PROJECT_BRIEF.md`, `PLAN.md`, `PHASE_GATES.md`, `BACKLOG.md`, `SLICE_REVIEWS.md`, `LESSONS_LEARNED.md`, `AGENTS.md`, `PROGRESS_NOTES.md`, `DECISION_LOG.md`
+- Group 3 — `ai/` folder system: `ai/README.md`, `ai/ai.config.json`, `ai/sessions/`, `ai/checkpoints/`, `ai/prompts/`, `ai/patterns/`, `ai/reports/`
+- Group 4 — `.claude/agents/` sub-agent roster: `repo-cartographer`, `project-steward`, `slice-planner`, `debugger`, `test-verifier`, `security-reviewer`, `docs-promoter`
+
+### Production Deployment (Pending)
 1. Deploy booking-platform API to VPS (PM2 on port 3001)
-   - Upload via WinSCP to /var/www/booking-api/: dist/, package.json, package-lock.json, prisma/schema.prisma, .env.production (rename to .env)
-   - SSH: npm install --omit=dev → npx prisma generate → pm2 start dist/server.js --name booking-api
-   - sudo ufw allow 3001/tcp
-   - Verify: curl http://localhost:3001/health → {"status":"ok"}
-2. Update index.html `data-api-url` to `http://74.208.9.49:3001` for production
-3. Upload updated index.html to /var/www/jones-barbor-shop/
+2. Update `index.html` `data-api-url` to `http://74.208.9.49:3001`
+3. Upload updated `index.html` + assets to `/var/www/jones-barbor-shop/`
 4. Test booking widget end-to-end on live site
 
 ## Open Audit Items
