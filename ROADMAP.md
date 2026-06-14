@@ -26,6 +26,7 @@ Completed work (see CHANGELOG.md), technical architecture (see ARCHITECTURE.md),
 - v1.9.9 — Reverted data-api-url to localhost:3000 for local dev
 - v1.10.0 — 3-step booking widget redesign: customer info → service/barber selection → slots + notes (Three Step)
 - v1.11.0 — Project Starter Kit v3.3 quality gate layer installed (DONE_CRITERIA, CHANGE_CONTROL, REPO_HEALTH_CHECK, ROLLBACK_PLAN, PROJECT_RISK_REGISTER, ai/agents/AGENT_REVIEW_GATES)
+- v1.12.0 — Project Starter Kit v3.3 root tracking files installed (START_HERE, PROJECT_BRIEF, PLAN, PHASE_GATES, BACKLOG, SLICE_REVIEWS, LESSONS_LEARNED, AGENTS, PROGRESS_NOTES, DECISION_LOG)
 
 ## Planned
 

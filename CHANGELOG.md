@@ -9,6 +9,25 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.12.0] — 2026-06-14
+
+### Added
+- `START_HERE.md` — unified project starter kit orientation and workflow guide ([`10a5f0a`](../../commit/10a5f0a))
+- `PROJECT_BRIEF.md` — project goal, users, core action, success criteria, risks ([`10a5f0a`](../../commit/10a5f0a))
+- `PLAN.md` — active project plan and current vertical slice ([`10a5f0a`](../../commit/10a5f0a))
+- `PHASE_GATES.md` — phase gate status (Gates 1–4 complete, Gate 5 in progress) ([`10a5f0a`](../../commit/10a5f0a))
+- `BACKLOG.md` — work queue: Build Now / Build Next / Build Later / Maybe / Do Not Build ([`10a5f0a`](../../commit/10a5f0a))
+- `SLICE_REVIEWS.md` — post-slice review log; seeded with Group 1 review ([`10a5f0a`](../../commit/10a5f0a))
+- `LESSONS_LEARNED.md` — lessons log; seeded with 3 lessons from this session ([`10a5f0a`](../../commit/10a5f0a))
+- `AGENTS.md` — agent instructions, commit rules, sub-agent workflow, quality gate rules ([`10a5f0a`](../../commit/10a5f0a))
+- `PROGRESS_NOTES.md` — historical progress log; seeded with v1.10.0 and v1.11.0 entries ([`10a5f0a`](../../commit/10a5f0a))
+- `DECISION_LOG.md` — key decisions log; seeded with 4 active decisions ([`10a5f0a`](../../commit/10a5f0a))
+
+### Tag / Snapshot
+`v1.12.0__root-tracking__commit-10a5f0a`
+
+---
+
 ## [1.11.0] — 2026-06-14
 
 ### Added

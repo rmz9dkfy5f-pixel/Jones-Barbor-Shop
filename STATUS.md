@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-06-14. Current version: v1.11.0.
+Last updated: 2026-06-14. Current version: v1.12.0.
 
 ## Live
 
@@ -10,13 +10,12 @@ Last updated: 2026-06-14. Current version: v1.11.0.
 
 ## Where We Left Off
 
-v1.11.0 Quality Gates — Project Starter Kit v3.3 Group 1 installed. Six quality gate files added to the repo root and `ai/agents/`: `DONE_CRITERIA.md`, `CHANGE_CONTROL.md`, `REPO_HEALTH_CHECK.md`, `ROLLBACK_PLAN.md`, `PROJECT_RISK_REGISTER.md`, `ai/agents/AGENT_REVIEW_GATES.md`. No existing files were modified. `data-api-url` is still `http://localhost:3000` for local dev.
+v1.12.0 Root Tracking — Project Starter Kit v3.3 Group 2 installed. Ten root tracking files added: START_HERE.md, PROJECT_BRIEF.md, PLAN.md, PHASE_GATES.md, BACKLOG.md, SLICE_REVIEWS.md, LESSONS_LEARNED.md, AGENTS.md, PROGRESS_NOTES.md, DECISION_LOG.md. No existing files were modified. `data-api-url` is still `http://localhost:3000` for local dev.
 
 ## What's Next
 
 ### v3.3 Migration (In Progress)
-- Group 2 — 10 root tracking files: `START_HERE.md`, `PROJECT_BRIEF.md`, `PLAN.md`, `PHASE_GATES.md`, `BACKLOG.md`, `SLICE_REVIEWS.md`, `LESSONS_LEARNED.md`, `AGENTS.md`, `PROGRESS_NOTES.md`, `DECISION_LOG.md`
-- Group 3 — `ai/` folder system: `ai/README.md`, `ai/ai.config.json`, `ai/sessions/`, `ai/checkpoints/`, `ai/prompts/`, `ai/patterns/`, `ai/reports/`
+- Group 3 — ai/ folder system: `ai/README.md`, `ai/ai.config.json`, `ai/sessions/`, `ai/checkpoints/`, `ai/prompts/`, `ai/patterns/`, `ai/reports/`
 - Group 4 — `.claude/agents/` sub-agent roster: `repo-cartographer`, `project-steward`, `slice-planner`, `debugger`, `test-verifier`, `security-reviewer`, `docs-promoter`
 
 ### Production Deployment (Pending)

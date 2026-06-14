@@ -1,30 +1,32 @@
 # Progress Note
 
-Session ended 2026-06-14. Covered v1.11.0 Quality Gates.
+Session ended 2026-06-14. Covered v1.12.0 Root Tracking.
 
 ---
 
 ## Milestone
 
-**v1.11.0 Quality Gates** — Project Starter Kit v3.3 Group 1 installed. Six quality gate files added to the repo root and `ai/agents/`. No existing files were modified.
+**v1.12.0 Root Tracking** — Project Starter Kit v3.3 Group 2 installed. Ten root tracking files added to the repo. No existing files were modified.
 
 ---
 
 ## Tasks Completed
 
-- Cleared disk space issue (ENOSPC on `/private/tmp` was blocking all writes)
-- Read all 6 Group 1 templates from `project-starter-kit-v3.3/`
-- Wrote 6 new files to repo root and `ai/agents/`:
-  - `DONE_CRITERIA.md` — done criteria for every slice type
-  - `CHANGE_CONTROL.md` — change control rules for AI agents
-  - `REPO_HEALTH_CHECK.md` — baseline repo health snapshot (pre-filled for this repo's stack)
-  - `ROLLBACK_PLAN.md` — rollback procedures (pre-filled for this migration)
-  - `PROJECT_RISK_REGISTER.md` — risk register seeded with known Jones Barber Shop risks
-  - `ai/agents/AGENT_REVIEW_GATES.md` — mandatory agent gate rules by change type
-- Committed as `c047563`, tagged `v1.11.0__quality-gates__commit-c047563`, pushed
-- Created release note: `releases/v1.11.0-2026-06-14-Quality-Gates.md`
-- Updated `CHANGELOG.md` and `RELEASE_NOTES.md` with v1.11.0 entry
-- Updated all root tracking/handoff docs to reflect v1.11.0
+- Took local RepoBackups snapshot at `v1.11.2__kit-source__commit-7cab694` before starting Group 2
+- Wrote all 10 Group 2 root tracking files:
+  - `START_HERE.md` — workflow orientation and file map
+  - `PROJECT_BRIEF.md` — project goal, users, core action, success criteria
+  - `PLAN.md` — active plan with current slice and next steps
+  - `PHASE_GATES.md` — gate status; Gates 1–4 complete, Gate 5 in progress
+  - `BACKLOG.md` — full work queue by priority tier
+  - `SLICE_REVIEWS.md` — review log seeded with Group 1 review
+  - `LESSONS_LEARNED.md` — lessons log seeded with 3 entries
+  - `AGENTS.md` — agent instructions with commit rules and sub-agent workflow
+  - `PROGRESS_NOTES.md` — historical log seeded with v1.10.0 and v1.11.x entries
+  - `DECISION_LOG.md` — decision log seeded with 4 active entries
+- Committed as `10a5f0a`, tagged `v1.12.0__root-tracking__commit-10a5f0a`, pushed
+- Updated CHANGELOG.md, RELEASE_NOTES.md, ROADMAP.md with v1.12.0 entry
+- Created release note: `releases/v1.12.0-2026-06-14-Root-Tracking.md`
 
 ---
 
@@ -32,9 +34,9 @@ Session ended 2026-06-14. Covered v1.11.0 Quality Gates.
 
 | Hash | Message |
 |---|---|
-| `c047563` | chore: install v3.3 quality gate layer |
-| `b40ca16` | docs(release): v1.11.0 Quality Gates — changelog and snapshot |
-| `e8375fc` | docs(release): v1.11.0 Quality Gates — CHANGELOG and RELEASE_NOTES |
+| `7cab694` | chore: commit project starter kit v3.3 source and update prompts |
+| `62e2305` | docs(release): v1.11.1 State Sync — add to RELEASE_NOTES |
+| `10a5f0a` | chore: install v3.3 root tracking files — Group 2 |
 
 ---
 
@@ -42,7 +44,8 @@ Session ended 2026-06-14. Covered v1.11.0 Quality Gates.
 
 | Tag | Applied to |
 |---|---|
-| `v1.11.0__quality-gates__commit-c047563` | `c047563` |
+| `v1.11.2__kit-source__commit-7cab694` | `7cab694` |
+| `v1.12.0__root-tracking__commit-10a5f0a` | `10a5f0a` |
 
 ---
 
@@ -50,32 +53,35 @@ Session ended 2026-06-14. Covered v1.11.0 Quality Gates.
 
 | File | Change |
 |---|---|
-| `DONE_CRITERIA.md` | Created — v3.3 template |
-| `CHANGE_CONTROL.md` | Created — v3.3 template |
-| `REPO_HEALTH_CHECK.md` | Created — v3.3 template, pre-filled for this repo |
-| `ROLLBACK_PLAN.md` | Created — v3.3 template, pre-filled for this migration |
-| `PROJECT_RISK_REGISTER.md` | Created — v3.3 template, seeded with real risks |
-| `ai/agents/AGENT_REVIEW_GATES.md` | Created — v3.3 template |
-| `releases/v1.11.0-2026-06-14-Quality-Gates.md` | Created — release note |
-| `CHANGELOG.md` | v1.11.0 entry added |
-| `RELEASE_NOTES.md` | v1.11.0 entry prepended |
-| `ROADMAP.md` | v1.11.0 added to Completed |
-| `STATUS.md` | Updated to v1.11.0 |
+| `START_HERE.md` | Created — v3.3 template |
+| `PROJECT_BRIEF.md` | Created — v3.3 template, pre-filled |
+| `PLAN.md` | Created — v3.3 template, pre-filled |
+| `PHASE_GATES.md` | Created — v3.3 template, pre-filled |
+| `BACKLOG.md` | Created — v3.3 template, pre-filled |
+| `SLICE_REVIEWS.md` | Created — v3.3 template, seeded with Group 1 review |
+| `LESSONS_LEARNED.md` | Created — v3.3 template, seeded with 3 lessons |
+| `AGENTS.md` | Created — v3.3 template, pre-filled |
+| `PROGRESS_NOTES.md` | Created — v3.3 template, seeded with historical notes |
+| `DECISION_LOG.md` | Created — v3.3 template, seeded with 4 decisions |
+| `releases/v1.12.0-2026-06-14-Root-Tracking.md` | Created — release note |
+| `CHANGELOG.md` | v1.12.0 entry added |
+| `RELEASE_NOTES.md` | v1.12.0 entry prepended |
+| `ROADMAP.md` | v1.12.0 added to Completed |
+| `STATUS.md` | Updated to v1.12.0 |
 | `PROGRESS_NOTE.md` | This file |
-| `CONTEXT.md` | Canonical docs table updated with v3.3 files |
 
 ---
 
 ## What's Next
 
-### v3.3 Migration Groups 2–4
-
-**Group 2 — Root Tracking Files (10 files):**
-- `START_HERE.md`, `PROJECT_BRIEF.md`, `PLAN.md`, `PHASE_GATES.md`, `BACKLOG.md`
-- `SLICE_REVIEWS.md`, `LESSONS_LEARNED.md`, `AGENTS.md`, `PROGRESS_NOTES.md`, `DECISION_LOG.md`
+### v3.3 Migration Groups 3–4
 
 **Group 3 — ai/ Folder System:**
-- `ai/README.md`, `ai/ai.config.json`, `ai/sessions/`, `ai/checkpoints/`, `ai/prompts/`, `ai/patterns/`, `ai/reports/`
+- `ai/README.md`, `ai/ai.config.json`
+- `ai/sessions/features/`, `ai/sessions/debug/`, `ai/sessions/designs/`, `ai/sessions/optimization/`
+- `ai/checkpoints/`, `ai/prompts/`, `ai/patterns/`, `ai/reports/`
+- `ai/templates/` (7 template files)
 
 **Group 4 — .claude/agents/ Sub-Agent Roster:**
-- `repo-cartographer`, `project-steward`, `slice-planner`, `debugger`, `test-verifier`, `security-reviewer`, `docs-promoter`
+- `repo-cartographer.md`, `project-steward.md`, `slice-planner.md`
+- `debugger.md`, `test-verifier.md`, `security-reviewer.md`, `docs-promoter.md`

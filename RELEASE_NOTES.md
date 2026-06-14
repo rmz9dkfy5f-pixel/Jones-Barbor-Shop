@@ -28,6 +28,34 @@ All releases, newest first. Individual release files live in [`/releases/`](./re
 
 ---
 
+# v1.12.0 - 2026-06-14 - Root Tracking
+
+> **Root Tracking** — installs the Project Starter Kit v3.3 Group 2 layer: 10 root-level tracking files that give any AI agent or contributor an immediate orientation to project state, decisions, backlog, and history. No existing files were modified.
+
+## What's Changed
+
+### Added
+- `START_HERE.md` — workflow orientation and file map
+- `PROJECT_BRIEF.md` — project goal, users, core action, success criteria, risks
+- `PLAN.md` — active plan; current slice is Group 3 (ai/ folder system)
+- `PHASE_GATES.md` — gate status: Gates 1–4 complete, Gate 5 in progress
+- `BACKLOG.md` — full work queue organized by priority tier
+- `SLICE_REVIEWS.md` — post-slice review log; seeded with Group 1 review
+- `LESSONS_LEARNED.md` — lessons log; 3 entries from this session
+- `AGENTS.md` — agent instructions including commit rules and sub-agent workflow
+- `PROGRESS_NOTES.md` — historical progress log; seeded with v1.10.0 and v1.11.x entries
+- `DECISION_LOG.md` — key decisions; 4 active entries
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.12.0__root-tracking__commit-10a5f0a` |
+| Commits | `10a5f0a` |
+| Date | 2026-06-14 |
+
+---
+
 # v1.11.1 - 2026-06-14 - State Sync
 
 > **State Sync** — updates all root tracking and handoff documents to reflect the v1.11.0 Quality Gates release. `ROADMAP.md`, `STATUS.md`, `PROGRESS_NOTE.md`, and `CONTEXT.md` are now current.
