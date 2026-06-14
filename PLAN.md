@@ -14,13 +14,13 @@ Plan only as far as needed to reach the next phase gate.
 
 ## Active Objective
 
-Complete Project Starter Kit v3.3 migration (Groups 2–4) and then unblock production deployment.
+Unblock production deployment: deploy booking API to VPS, update `data-api-url`, replace placeholder content.
 
 ---
 
 ## Current Validation Question
 
-Are all v3.3 tracking, AI memory, and sub-agent files installed without overwriting existing project files?
+Is the live site at `jones-barbor-shop.craftandconscious.com` serving real content with a working booking widget?
 
 ---
 
@@ -28,30 +28,28 @@ Are all v3.3 tracking, AI memory, and sub-agent files installed without overwrit
 
 ### Slice Name
 
-v3.3 Migration — Group 2: Root Tracking Files
+Production deployment — booking API
 
 ### Purpose
 
-Install 10 missing root-level tracking files from the v3.3 template layer.
+Deploy the booking-platform API to the VPS (PM2 on port 3001) so the booking widget functions end-to-end on the live site.
 
 ### User/Operator Outcome
 
-The repo has a full set of project control files so any AI agent or new contributor can orient immediately from `START_HERE.md`.
+Visitors can submit a booking inquiry through the widget on the live site.
 
 ### Systems Touched
 
-- [x] Documentation
+- [ ] Documentation
 - [ ] UI
-- [ ] API
+- [ ] API (booking-platform on VPS)
 - [ ] Database
-- [ ] Filesystem (new files only — no moves)
+- [ ] Filesystem (`index.html` data-api-url update)
 
 ### Final Work Deferred
 
-- [ ] Group 3 — ai/ folder system
-- [ ] Group 4 — .claude/agents/ sub-agent roster
-- [ ] Production deployment (API + index.html update)
-- [ ] Replace placeholder content
+- [ ] Replace placeholder content (phone, address, barber info, photos)
+- [ ] Accessibility fixes (H-1 skip link, H-2 focus styles, M-series)
 
 ---
 
@@ -59,27 +57,17 @@ The repo has a full set of project control files so any AI agent or new contribu
 
 This slice is done when:
 
-- [x] Initial check has been run
-- [x] All 10 Group 2 files created
-- [x] No existing files overwritten
-- [x] Tracking files updated
-- [x] Changes committed and pushed
-- [x] Release tagged
+- [ ] booking-platform API running on VPS (PM2, port 3001)
+- [ ] `index.html` `data-api-url` updated to `http://74.208.9.49:3001`
+- [ ] Updated files uploaded to `/var/www/jones-barbor-shop/`
+- [ ] Booking widget tested end-to-end on live site
+- [ ] Changes committed, tagged, and pushed
 
 ---
 
 ## Expected Files To Change
 
-- [x] `START_HERE.md` — created
-- [x] `PROJECT_BRIEF.md` — created
-- [x] `PLAN.md` — created (this file)
-- [x] `PHASE_GATES.md` — created
-- [x] `BACKLOG.md` — created
-- [x] `SLICE_REVIEWS.md` — created
-- [x] `LESSONS_LEARNED.md` — created
-- [x] `AGENTS.md` — created
-- [x] `PROGRESS_NOTES.md` — created
-- [x] `DECISION_LOG.md` — created
+- [ ] `index.html` — update `data-api-url` attribute
 
 ---
 
@@ -87,17 +75,15 @@ This slice is done when:
 
 Do not build these during this slice:
 
-- [ ] ai/ folder system (Group 3)
-- [ ] .claude/agents/ roster (Group 4)
-- [ ] Any changes to index.html
-- [ ] Any changes to existing docs/
+- [ ] Placeholder content replacement
+- [ ] Accessibility fixes
+- [ ] Any visual/layout changes
 
 ---
 
 ## Next Slices
 
-1. Group 3 — ai/ folder system
-2. Group 4 — .claude/agents/ sub-agent roster
-3. Deploy booking API to VPS
-4. Update data-api-url to production address
-5. Replace placeholder content
+1. Deploy booking API to VPS (current)
+2. Replace placeholder content (phone, address, barber bios, photos)
+3. Accessibility pass (skip link, focus styles, ARIA roles)
+4. Production photography swap

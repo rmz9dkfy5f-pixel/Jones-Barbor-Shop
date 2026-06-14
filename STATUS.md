@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-06-14. Current version: v1.14.0.
+Last updated: 2026-06-14. Current version: v1.14.0 + post-audit hygiene.
 
 ## Live
 
@@ -10,7 +10,7 @@ Last updated: 2026-06-14. Current version: v1.14.0.
 
 ## Where We Left Off
 
-v1.14.0 Sub Agents — Project Starter Kit v3.3 migration complete. 7 Claude Code sub-agent definition files installed in `.claude/agents/`: repo-cartographer, project-steward, slice-planner, debugger, test-verifier, security-reviewer, docs-promoter. No existing files were modified. `data-api-url` is still `http://localhost:3000` for local dev.
+Post-audit hygiene complete. Full site audit run after v3.3 Groups 1–4 install. Slices B–G executed: `.nojekyll` added, SVG favicon added, `docs/VERSIONING.md` updated to v1.14.0, `Documents/` marked as legacy archive, `REPO_HEALTH_CHECK.md` and `ROLLBACK_PLAN.md` refreshed, root working files updated. `data-api-url` is still `http://localhost:3000` — not yet pushed to VPS.
 
 ## What's Next
 

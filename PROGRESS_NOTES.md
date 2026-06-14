@@ -46,6 +46,42 @@ Next action:
 
 ## Notes
 
+### 2026-06-14 — v1.14.0 Sub Agents + Post-Audit Hygiene
+
+Phase:
+
+```text
+Phase 2 — v3.3 migration complete; post-audit hygiene slices B–F
+```
+
+Completed:
+
+- Installed Group 4 sub-agent roster (7 `.claude/agents/` files) — v1.14.0
+- v3.3 migration 100% complete (Groups 1–4)
+- Site audit: confirmed git tracks images as `pics/` (no 404); added `.nojekyll`; added SVG favicon; updated `docs/VERSIONING.md` release history to v1.14.0; marked `Documents/` as legacy archive; refreshed `REPO_HEALTH_CHECK.md` and `ROLLBACK_PLAN.md`
+- Updated `PLAN.md`, `PROGRESS_NOTE.md`, `STATUS.md` to post-audit state
+
+Blocked:
+
+- Booking API not yet deployed to VPS
+
+Commit:
+
+```text
+9341635 chore: install v3.3 sub-agent roster — Group 4
+dee44af chore: add .nojekyll to disable Jekyll on GitHub Pages
+ad8241c feat: add SVG favicon — scissors icon, gold on dark background
+c1f4ae8 docs: update VERSIONING.md release history to v1.14.0
+b7ef9d8 docs: mark Documents/ as legacy archive with README
+487d01b docs: refresh REPO_HEALTH_CHECK and ROLLBACK_PLAN to post-audit state
+```
+
+Next action:
+
+> Deploy booking-platform API to VPS (PM2 on port 3001); update `data-api-url` in `index.html`.
+
+---
+
 ### 2026-05-20 — v1.10.0 Three Step
 
 Phase:

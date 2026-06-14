@@ -1,35 +1,24 @@
 # Progress Note
 
-Session ended 2026-06-14. Covered v1.14.0 Sub Agents. v3.3 migration complete.
+Session ended 2026-06-14. Covered post-audit hygiene slices B–F and root file cleanup (Slice G).
 
 ---
 
 ## Milestone
 
-**v1.14.0 Sub Agents** — Final group of the Project Starter Kit v3.3 migration. 7 Claude Code sub-agent definition files installed in `.claude/agents/`. No existing files were modified.
-
-**v3.3 migration is now 100% complete.** All four groups installed:
-- Group 1 (v1.11.0) — Quality gate layer (6 files)
-- Group 2 (v1.12.0) — Root tracking files (10 files)
-- Group 3 (v1.13.0) — ai/ folder system (20 files)
-- Group 4 (v1.14.0) — .claude/agents/ sub-agent roster (7 files)
+**Post-audit hygiene complete.** Site audit identified 7 proposed slices. Slices A (no action needed — git already tracks images lowercase), B–F, and G executed.
 
 ---
 
 ## Tasks Completed
 
-- Took local RepoBackups snapshot at `v1.13.0__ai-system__commit-c0164b3` before starting Group 4
-- Wrote all 7 Group 4 sub-agent files:
-  - `.claude/agents/repo-cartographer.md`
-  - `.claude/agents/project-steward.md`
-  - `.claude/agents/slice-planner.md`
-  - `.claude/agents/debugger.md`
-  - `.claude/agents/test-verifier.md`
-  - `.claude/agents/security-reviewer.md`
-  - `.claude/agents/docs-promoter.md`
-- Committed as `9341635`, tagged `v1.14.0__sub-agents__commit-9341635`, pushed
-- Created release note: `releases/v1.14.0-2026-06-14-Sub-Agents.md`
-- Updated CHANGELOG.md, RELEASE_NOTES.md, ROADMAP.md with v1.14.0 entry
+- Confirmed `pics/` case: git index uses lowercase — no production 404 (Slice A)
+- Added `.nojekyll` to disable Jekyll on GitHub Pages (Slice B)
+- Added SVG favicon to `index.html` — scissors icon, gold on dark (Slice C)
+- Updated `docs/VERSIONING.md` release history from v1.4.0 to v1.14.0 (Slice D)
+- Created `Documents/README.md` marking folder as legacy archive (Slice E)
+- Refreshed `REPO_HEALTH_CHECK.md` and `ROLLBACK_PLAN.md` to post-audit state (Slice F)
+- Updated `PLAN.md`, `PROGRESS_NOTE.md`, `PROGRESS_NOTES.md`, `STATUS.md` (Slice G)
 
 ---
 
@@ -37,15 +26,11 @@ Session ended 2026-06-14. Covered v1.14.0 Sub Agents. v3.3 migration complete.
 
 | Hash | Message |
 |---|---|
-| `9341635` | chore: install v3.3 sub-agent roster — Group 4 |
-
----
-
-## Git Tags
-
-| Tag | Applied to |
-|---|---|
-| `v1.14.0__sub-agents__commit-9341635` | `9341635` |
+| `dee44af` | chore: add .nojekyll to disable Jekyll on GitHub Pages |
+| `ad8241c` | feat: add SVG favicon — scissors icon, gold on dark background |
+| `c1f4ae8` | docs: update VERSIONING.md release history to v1.14.0 |
+| `b7ef9d8` | docs: mark Documents/ as legacy archive with README |
+| `487d01b` | docs: refresh REPO_HEALTH_CHECK and ROLLBACK_PLAN to post-audit state |
 
 ---
 
@@ -53,19 +38,16 @@ Session ended 2026-06-14. Covered v1.14.0 Sub Agents. v3.3 migration complete.
 
 | File | Change |
 |---|---|
-| `.claude/agents/repo-cartographer.md` | Created |
-| `.claude/agents/project-steward.md` | Created |
-| `.claude/agents/slice-planner.md` | Created |
-| `.claude/agents/debugger.md` | Created |
-| `.claude/agents/test-verifier.md` | Created |
-| `.claude/agents/security-reviewer.md` | Created |
-| `.claude/agents/docs-promoter.md` | Created |
-| `releases/v1.14.0-2026-06-14-Sub-Agents.md` | Created |
-| `CHANGELOG.md` | v1.14.0 entry added |
-| `RELEASE_NOTES.md` | v1.14.0 entry prepended |
-| `ROADMAP.md` | v1.14.0 added to Completed |
-| `STATUS.md` | Updated to v1.14.0 — migration complete |
+| `.nojekyll` | Created |
+| `index.html` | SVG favicon added to `<head>` |
+| `docs/VERSIONING.md` | Release history extended to v1.14.0 |
+| `Documents/README.md` | Created — legacy archive marker |
+| `REPO_HEALTH_CHECK.md` | Snapshot, risks, and next slice updated |
+| `ROLLBACK_PLAN.md` | Updated to reflect completed migration |
+| `PLAN.md` | Reset to next active objective (booking API deployment) |
+| `PROGRESS_NOTES.md` | v1.14.0 session entry appended |
 | `PROGRESS_NOTE.md` | This file |
+| `STATUS.md` | Where We Left Off updated to post-audit state |
 
 ---
 
@@ -73,5 +55,5 @@ Session ended 2026-06-14. Covered v1.14.0 Sub Agents. v3.3 migration complete.
 
 1. Deploy booking-platform API to VPS (PM2 on port 3001)
 2. Update `index.html` `data-api-url` to `http://74.208.9.49:3001`
-3. Upload and test on live site
-4. Replace placeholder content (phone, address, photos)
+3. Upload and test on live site at `jones-barbor-shop.craftandconscious.com`
+4. Replace placeholder content (phone, address, barber info, photos)
