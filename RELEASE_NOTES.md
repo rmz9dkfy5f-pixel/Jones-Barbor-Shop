@@ -4,30 +4,6 @@ All releases, newest first. Individual release files live in [`/releases/`](./re
 
 ---
 
-# v1.11.0 - 2026-06-14 - Quality Gates
-
-> **Quality Gates** — installs the Project Starter Kit v3.3 quality gate layer. Six new files define done criteria, change control rules, repo health baseline, rollback procedures, risk register, and agent review gates. No existing files were modified.
-
-## What's Changed
-
-### Added
-- `DONE_CRITERIA.md` — done criteria for every slice type
-- `CHANGE_CONTROL.md` — change control rules for AI agents
-- `REPO_HEALTH_CHECK.md` — repo health baseline snapshot
-- `ROLLBACK_PLAN.md` — rollback procedures for risky changes
-- `PROJECT_RISK_REGISTER.md` — risk log seeded with Jones Barber Shop risks
-- `ai/agents/AGENT_REVIEW_GATES.md` — agent review gate rules by change type
-
-## Snapshot
-
-| Field | Value |
-|---|---|
-| Tag | `v1.11.0__quality-gates__commit-c047563` |
-| Commits | `c047563` |
-| Date | 2026-06-14 |
-
----
-
 # v1.12.0 - 2026-06-14 - Root Tracking
 
 > **Root Tracking** — installs the Project Starter Kit v3.3 Group 2 layer: 10 root-level tracking files that give any AI agent or contributor an immediate orientation to project state, decisions, backlog, and history. No existing files were modified.
@@ -56,6 +32,29 @@ All releases, newest first. Individual release files live in [`/releases/`](./re
 
 ---
 
+# v1.11.2 - 2026-06-14 - Kit Source
+
+> **Kit Source** — commits the project-starter-kit-v3.3 reference folder (104 files) to the repo and updates prompts.
+
+## What's Changed
+
+### Added
+- `project-starter-kit-v3.3/` — full v3.3 source folder (104 files)
+
+### Updated
+- `prompts/Snapshot` — current snapshot workflow instructions
+- `prompts/Update.md` — current update workflow instructions
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.11.2__kit-source__commit-7cab694` |
+| Commits | `7cab694` |
+| Date | 2026-06-14 |
+
+---
+
 # v1.11.1 - 2026-06-14 - State Sync
 
 > **State Sync** — updates all root tracking and handoff documents to reflect the v1.11.0 Quality Gates release. `ROADMAP.md`, `STATUS.md`, `PROGRESS_NOTE.md`, and `CONTEXT.md` are now current.
@@ -74,6 +73,30 @@ All releases, newest first. Individual release files live in [`/releases/`](./re
 |---|---|
 | Tag | `v1.11.1__state-sync__commit-999a753` |
 | Commits | `999a753` |
+| Date | 2026-06-14 |
+
+---
+
+# v1.11.0 - 2026-06-14 - Quality Gates
+
+> **Quality Gates** — installs the Project Starter Kit v3.3 quality gate layer. Six new files define done criteria, change control rules, repo health baseline, rollback procedures, risk register, and agent review gates. No existing files were modified.
+
+## What's Changed
+
+### Added
+- `DONE_CRITERIA.md` — done criteria for every slice type
+- `CHANGE_CONTROL.md` — change control rules for AI agents
+- `REPO_HEALTH_CHECK.md` — repo health baseline snapshot
+- `ROLLBACK_PLAN.md` — rollback procedures for risky changes
+- `PROJECT_RISK_REGISTER.md` — risk log seeded with Jones Barber Shop risks
+- `ai/agents/AGENT_REVIEW_GATES.md` — agent review gate rules by change type
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.11.0__quality-gates__commit-c047563` |
+| Commits | `c047563` |
 | Date | 2026-06-14 |
 
 ---
