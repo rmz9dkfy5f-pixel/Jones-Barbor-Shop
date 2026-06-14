@@ -1,6 +1,32 @@
+
 # Release Notes — Jones Barber Shop
 
 All releases, newest first. Individual release files live in [`/releases/`](./releases/).
+
+---
+
+# v1.14.0 - 2026-06-14 - Sub Agents
+
+> **Sub Agents** — installs 7 Claude Code sub-agent definition files into `.claude/agents/`. Final group of the Project Starter Kit v3.3 migration. No existing files were modified.
+
+## What's Changed
+
+### Added
+- `.claude/agents/repo-cartographer.md` — maps repo structure, stack, risk. Read-only.
+- `.claude/agents/project-steward.md` — compares work against source-of-truth files. Read-only.
+- `.claude/agents/slice-planner.md` — converts broad goals to smallest safe slice. Read-only.
+- `.claude/agents/debugger.md` — isolates one bug, proposes minimal fix.
+- `.claude/agents/test-verifier.md` — runs safe verification, reports pass/fail.
+- `.claude/agents/security-reviewer.md` — reviews auth, secrets, exposure risks. Read-only.
+- `.claude/agents/docs-promoter.md` — recommends what becomes durable docs. Read-only.
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.14.0__sub-agents__commit-9341635` |
+| Commits | `9341635` |
+| Date | 2026-06-14 |
 
 ---
 

@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-06-14. Current version: v1.13.0.
+Last updated: 2026-06-14. Current version: v1.14.0.
 
 ## Live
 
@@ -10,18 +10,19 @@ Last updated: 2026-06-14. Current version: v1.13.0.
 
 ## Where We Left Off
 
-v1.13.0 AI System — Project Starter Kit v3.3 Group 3 installed. 20 files added to the ai/ folder: README, config, 3 agent support docs, 8 folder placeholders, and 7 session/checkpoint/prompt/pattern templates. No existing files were modified. `data-api-url` is still `http://localhost:3000` for local dev.
+v1.14.0 Sub Agents — Project Starter Kit v3.3 migration complete. 7 Claude Code sub-agent definition files installed in `.claude/agents/`: repo-cartographer, project-steward, slice-planner, debugger, test-verifier, security-reviewer, docs-promoter. No existing files were modified. `data-api-url` is still `http://localhost:3000` for local dev.
 
 ## What's Next
-
-### v3.3 Migration (Final Group)
-- Group 4 — `.claude/agents/` sub-agent roster: `repo-cartographer.md`, `project-steward.md`, `slice-planner.md`, `debugger.md`, `test-verifier.md`, `security-reviewer.md`, `docs-promoter.md`
 
 ### Production Deployment (Pending)
 1. Deploy booking-platform API to VPS (PM2 on port 3001)
 2. Update `index.html` `data-api-url` to `http://74.208.9.49:3001`
 3. Upload updated `index.html` + assets to `/var/www/jones-barbor-shop/`
 4. Test booking widget end-to-end on live site
+
+### Content (Before Launch)
+- Replace placeholder phone, address, email with real shop data
+- Replace Pexels images with real shop photography
 
 ## Open Audit Items
 

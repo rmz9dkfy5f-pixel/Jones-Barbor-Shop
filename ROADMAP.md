@@ -28,6 +28,7 @@ Completed work (see CHANGELOG.md), technical architecture (see ARCHITECTURE.md),
 - v1.11.0 — Project Starter Kit v3.3 quality gate layer installed (DONE_CRITERIA, CHANGE_CONTROL, REPO_HEALTH_CHECK, ROLLBACK_PLAN, PROJECT_RISK_REGISTER, ai/agents/AGENT_REVIEW_GATES)
 - v1.12.0 — Project Starter Kit v3.3 root tracking files installed (START_HERE, PROJECT_BRIEF, PLAN, PHASE_GATES, BACKLOG, SLICE_REVIEWS, LESSONS_LEARNED, AGENTS, PROGRESS_NOTES, DECISION_LOG)
 - v1.13.0 — Project Starter Kit v3.3 ai/ folder system installed (README, config, agent docs, session/checkpoint/template folders)
+- v1.14.0 — Project Starter Kit v3.3 migration complete: 7 Claude Code sub-agents installed (.claude/agents/)
 
 ## Planned
 

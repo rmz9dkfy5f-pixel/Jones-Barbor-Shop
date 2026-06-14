@@ -9,6 +9,22 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.14.0] — 2026-06-14
+
+### Added
+- `.claude/agents/repo-cartographer.md` — repo structure mapper, read-only ([`9341635`](../../commit/9341635))
+- `.claude/agents/project-steward.md` — source-of-truth alignment checker, read-only ([`9341635`](../../commit/9341635))
+- `.claude/agents/slice-planner.md` — vertical slice planner, read-only ([`9341635`](../../commit/9341635))
+- `.claude/agents/debugger.md` — single-bug investigator, minimal fix ([`9341635`](../../commit/9341635))
+- `.claude/agents/test-verifier.md` — safe verification runner, pass/fail reporter ([`9341635`](../../commit/9341635))
+- `.claude/agents/security-reviewer.md` — security risk reviewer, read-only ([`9341635`](../../commit/9341635))
+- `.claude/agents/docs-promoter.md` — session-to-docs promotion advisor, read-only ([`9341635`](../../commit/9341635))
+
+### Tag / Snapshot
+`v1.14.0__sub-agents__commit-9341635`
+
+---
+
 ## [1.13.0] — 2026-06-14
 
 ### Added
