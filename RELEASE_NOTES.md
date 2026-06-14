@@ -28,6 +28,28 @@ All releases, newest first. Individual release files live in [`/releases/`](./re
 
 ---
 
+# v1.11.1 - 2026-06-14 - State Sync
+
+> **State Sync** — updates all root tracking and handoff documents to reflect the v1.11.0 Quality Gates release. `ROADMAP.md`, `STATUS.md`, `PROGRESS_NOTE.md`, and `CONTEXT.md` are now current.
+
+## What's Changed
+
+### Updated
+- `ROADMAP.md` — v1.11.0 added to Completed
+- `STATUS.md` — current version bumped to v1.11.0, Where We Left Off and What's Next updated with v3.3 Groups 2–4 and production deployment steps
+- `PROGRESS_NOTE.md` — full session record for 2026-06-14
+- `CONTEXT.md` — canonical docs table updated with all 6 new v3.3 quality gate files
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Tag | `v1.11.1__state-sync__commit-999a753` |
+| Commits | `999a753` |
+| Date | 2026-06-14 |
+
+---
+
 # v1.10.0 - 2026-05-20 - Three Step
 
 > **Three Step** — redesigns the booking widget from a slot-picker-first flow to a clean 3-step form: enter your info, pick your service and barber, then choose an available time. Services and barbers are loaded live from the API. Slots show 12-hour AM/PM time. Dark theme color scheme updated to gold labels and warm cream text.
