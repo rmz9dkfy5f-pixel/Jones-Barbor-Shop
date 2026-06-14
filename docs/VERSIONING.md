@@ -88,7 +88,32 @@ Codenames are used for all releases in this project. They are paired with the ve
 | v1.1.0 | 2026-05-03 | Marquee | Rename entry point to `index.html`; add `RELEASE_NOTES.md` |
 | v1.2.0 | 2026-05-03 | Stable-Changelog | Add `CHANGELOG.md` |
 | v1.3.0 | 2026-05-04 | Docs-Scaffold | Add `Documents/` folder with planning and reference materials |
-| v1.4.0 | 2026-05-04 | Blueprint | Full repo scaffold via `00_RUN_FIRST.md` execution |
+| v1.4.0 | 2026-05-04 | Blueprint | Full repo scaffold — `ARCHITECTURE.md`, `CLAUDE.md`, `docs/`, `plans/`, `design/` |
+| v1.4.1 | 2026-05-04 | DS-Store-Ignore | Add `.DS_Store` to `.gitignore` |
+| v1.5.0 | 2026-05-04 | Release-Notes-Vault | Add `releases/` folder with individual release note files |
+| v1.6.0 | 2026-05-04 | Local-Photography | Add `pics/` with 15 Pexels images; swap CDN URLs for local paths |
+| v1.7.0 | 2026-05-04 | The-Chair | Full cinematic redesign — fonts, animations, JS modules, all sections |
+| v1.7.1 | 2026-05-04 | Lined-Up | Line-up and nav polish pass |
+| v1.7.2 | 2026-05-04 | True-Line | Alignment and layout corrections |
+| v1.8.0 | 2026-05-08 | Sharp-Eye | Full site audit and documentation review |
+| v1.8.1 | 2026-05-08 | Full-Record | CHANGELOG backfill — all missing entries reconstructed |
+| v1.8.2 | 2026-05-08 | Open-Book | RELEASE_NOTES.md backfill — full coverage v1.0.0–v1.8.1 |
+| v1.9.0 | 2026-05-13 | Booking-Widget-Embed | Embed booking widget into `index.html` |
+| v1.9.1 | 2026-05-13 | Fix-Widget-CSS | Fix widget stylesheet cascade issues |
+| v1.9.2 | 2026-05-13 | Fix-Widget-Reveal | Fix widget section reveal/animation |
+| v1.9.3 | 2026-05-14 | Fix-Widget-IDs | Fix duplicate element IDs in widget |
+| v1.9.4 | 2026-05-14 | Open-Record | Backfill release records; update ROADMAP and PROGRESS_NOTE |
+| v1.9.5 | 2026-05-14 | Prompt-Vault | Add `prompts/` folder with snapshot and commit templates |
+| v1.9.6 | 2026-05-15 | Fix-API-URL | Correct booking widget API endpoint URL |
+| v1.9.7 | 2026-05-15 | Full-Context | Backfill session records for v1.9.4–v1.9.6 |
+| v1.9.8 | 2026-05-19 | Widget-Render | Fix widget rendering issues |
+| v1.9.9 | 2026-05-19 | Dev-API-URL | Revert API URL to localhost for local development |
+| v1.10.0 | 2026-05-20 | Three-Step | Redesign booking widget to 3-step flow with live API integration |
+| v1.11.0 | 2026-06-14 | Quality-Gates | Install v3.3 quality gates — DONE_CRITERIA, CHANGE_CONTROL, REPO_HEALTH_CHECK, ROLLBACK_PLAN, PROJECT_RISK_REGISTER, AGENT_REVIEW_GATES |
+| v1.11.1 | 2026-06-14 | State-Sync | Sync ROADMAP, STATUS, PROGRESS_NOTE, CONTEXT to v1.11.0 |
+| v1.12.0 | 2026-06-14 | Root-Tracking | Install v3.3 root project control files — PHASE_GATES, BACKLOG, PLAN, DECISION_LOG, LESSONS_LEARNED, SLICE_REVIEWS, PROGRESS_NOTES |
+| v1.13.0 | 2026-06-14 | AI-System | Install v3.3 AI engineering memory system — `ai/` folder with agents, sessions, templates |
+| v1.14.0 | 2026-06-14 | Sub-Agents | Install v3.3 sub-agent roster — 7 Claude Code agents in `.claude/agents/` |
 
 ## 10. Agent Rules
 
