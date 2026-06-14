@@ -1,4 +1,4 @@
-Update RELEASE_NOTES.md, ROADMAP.md, COMMIT_NOTES.md, PROGRESS_NOTE.md, CONTEXT.md, STATUS.md and CHANGELOG.md
+Update RELEASE_NOTES.md, ROADMAP.md, COMMIT_NOTES.md, PROGRESS_NOTE.md, CONTEXT.md, STATUS.md and CHANGELOG.md. As well as any other documents that are within the root of the project that are designed to hand off information, tracking, logging, or documentation 
 
 Give me GitHub Commit-Style notes with Summary and description.
 Every Git commit must have a matching snapshot, tags, and use real commit hashes, not  those example below.
