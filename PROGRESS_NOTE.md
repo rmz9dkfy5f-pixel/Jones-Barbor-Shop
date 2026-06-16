@@ -1,24 +1,25 @@
 # Progress Note
 
-Session ended 2026-06-14. Covered post-audit hygiene slices B–F and root file cleanup (Slice G).
+Session ended 2026-06-16. Covered HTTPS booking platform deployment and live integration.
 
 ---
 
 ## Milestone
 
-**Post-audit hygiene complete.** Site audit identified 7 proposed slices. Slices A (no action needed — git already tracks images lowercase), B–F, and G executed.
+**Booking platform live.** The booking widget is connected to a real production API over HTTPS for the first time. The platform is deployed on the VPS via systemd and the website is updated to point to the HTTPS endpoint.
 
 ---
 
 ## Tasks Completed
 
-- Confirmed `pics/` case: git index uses lowercase — no production 404 (Slice A)
-- Added `.nojekyll` to disable Jekyll on GitHub Pages (Slice B)
-- Added SVG favicon to `index.html` — scissors icon, gold on dark (Slice C)
-- Updated `docs/VERSIONING.md` release history from v1.4.0 to v1.14.0 (Slice D)
-- Created `Documents/README.md` marking folder as legacy archive (Slice E)
-- Refreshed `REPO_HEALTH_CHECK.md` and `ROLLBACK_PLAN.md` to post-audit state (Slice F)
-- Updated `PLAN.md`, `PROGRESS_NOTE.md`, `PROGRESS_NOTES.md`, `STATUS.md` (Slice G)
+- Deployed booking platform to VPS at `/srv/booking-platform/` (rsync of source + local build)
+- Created systemd service `booking-platform.service` (port 3001, matches existing `spa.service` pattern)
+- Provisioned local PostgreSQL database (`booking_platform` user + DB), ran migrations, seeded data
+- Configured Let's Encrypt TLS; nginx `/api/` reverse proxy block added to site config
+- Deployed `assets/booking-widget.js` and `assets/booking-widget.css` to `/var/www/jones-barbor-shop/assets/`
+- Updated `index.html`: `data-api-url` → HTTPS production URL, seed IDs updated
+- Confirmed widget loads and shows services/availability; health check passes
+- Payments deferred (no Stripe/Resend/Twilio keys yet)
 
 ---
 
@@ -26,11 +27,7 @@ Session ended 2026-06-14. Covered post-audit hygiene slices B–F and root file 
 
 | Hash | Message |
 |---|---|
-| `dee44af` | chore: add .nojekyll to disable Jekyll on GitHub Pages |
-| `ad8241c` | feat: add SVG favicon — scissors icon, gold on dark background |
-| `c1f4ae8` | docs: update VERSIONING.md release history to v1.14.0 |
-| `b7ef9d8` | docs: mark Documents/ as legacy archive with README |
-| `487d01b` | docs: refresh REPO_HEALTH_CHECK and ROLLBACK_PLAN to post-audit state |
+| `1394ef5` | deploy: connect website to HTTPS booking platform |
 
 ---
 
@@ -38,22 +35,12 @@ Session ended 2026-06-14. Covered post-audit hygiene slices B–F and root file 
 
 | File | Change |
 |---|---|
-| `.nojekyll` | Created |
-| `index.html` | SVG favicon added to `<head>` |
-| `docs/VERSIONING.md` | Release history extended to v1.14.0 |
-| `Documents/README.md` | Created — legacy archive marker |
-| `REPO_HEALTH_CHECK.md` | Snapshot, risks, and next slice updated |
-| `ROLLBACK_PLAN.md` | Updated to reflect completed migration |
-| `PLAN.md` | Reset to next active objective (booking API deployment) |
-| `PROGRESS_NOTES.md` | v1.14.0 session entry appended |
-| `PROGRESS_NOTE.md` | This file |
-| `STATUS.md` | Where We Left Off updated to post-audit state |
+| `index.html` | `data-api-url`, `data-service-id`, `data-location-id` updated to production values |
 
 ---
 
 ## What's Next
 
-1. Deploy booking-platform API to VPS (PM2 on port 3001)
-2. Update `index.html` `data-api-url` to `http://74.208.9.49:3001`
-3. Upload and test on live site at `jones-barbor-shop.craftandconscious.com`
-4. Replace placeholder content (phone, address, barber info, photos)
+1. Add Stripe keys to `/srv/booking-platform/.env` when ready; restart service
+2. Add Resend/Twilio keys when ready; restart service
+3. Replace placeholder content (phone, address, barber info, photos)

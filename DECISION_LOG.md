@@ -136,6 +136,99 @@ Active
 
 ---
 
+### 2026-06-15 — HTTPS path-prefix pattern for booking API
+
+Decision:
+
+> Serve the booking API at `https://jones-barbor-shop.craftandconscious.com/api` using nginx `/api/` path prefix stripping, rather than a separate subdomain.
+
+Reason:
+
+> The domain `jones-barbor-shop.craftandconscious.com` already had TLS configured. A path prefix avoids provisioning a new subdomain and a second Let's Encrypt cert. The nginx `proxy_pass http://127.0.0.1:3001/;` trailing slash strips the prefix cleanly.
+
+Alternatives considered:
+
+- Separate subdomain (`booking.jones-barbor-shop.craftandconscious.com`)
+- Raw IP + port (rejected — not HTTPS)
+
+Risk:
+
+> Path prefix routing can break if nginx config is later edited without understanding the trailing-slash stripping rule.
+
+Review trigger:
+
+> If an admin subdomain is needed, revisit separate subdomain approach.
+
+Status:
+
+```text
+Active
+```
+
+---
+
+### 2026-06-15 — systemd over PM2 for booking platform process management
+
+Decision:
+
+> Use systemd (`booking-platform.service`) to manage the booking platform process on the VPS instead of PM2.
+
+Reason:
+
+> The existing Raleigh Spa app on the same VPS already uses systemd (`spa.service`). Matching that pattern keeps the server consistent and avoids installing PM2.
+
+Alternatives considered:
+
+- PM2 (documented in earlier planning — rejected for consistency)
+- Docker Compose (not present on VPS)
+
+Risk:
+
+> No PM2 cluster mode — single-process only. Acceptable for current traffic.
+
+Review trigger:
+
+> If traffic grows and requires horizontal scaling or zero-downtime reloads.
+
+Status:
+
+```text
+Active
+```
+
+---
+
+### 2026-06-15 — Defer payments until Stripe keys are available
+
+Decision:
+
+> Deploy booking platform without Stripe/Resend/Twilio keys. Services are priced ($20–$65) but the checkout step will fail until keys are added.
+
+Reason:
+
+> Keys were not available at deployment time. Deferring avoids blocking the rest of the integration. The widget correctly shows services and availability; only checkout is broken.
+
+Alternatives considered:
+
+- Set all service prices to 0 temporarily (bypass Stripe)
+- Wait for keys before deploying
+
+Risk:
+
+> Any customer who reaches the payment step will see an error. Must be resolved before promoting the booking widget publicly.
+
+Review trigger:
+
+> When Stripe keys are ready — add to `/srv/booking-platform/.env` and restart service.
+
+Status:
+
+```text
+Active — Stripe keys pending
+```
+
+---
+
 ### 2026-06-14 — Commit project-starter-kit-v3.3 source to repo
 
 Decision:

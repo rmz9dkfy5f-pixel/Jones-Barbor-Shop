@@ -51,7 +51,81 @@ Before pushing a release to `main`:
 
 ## Environment Variables
 
-No environment variables are required for the current static site. See `.env.example` for future reference if a backend is added.
+No environment variables are required for the static site itself. The booking widget reads its config from `data-*` attributes on the `<script>` tag in `index.html`.
+
+Booking platform env vars are stored in `/srv/booking-platform/.env` on the VPS (not committed).
+
+## Booking Platform Deployment
+
+The booking API runs as a systemd service on the VPS alongside the static site.
+
+### VPS Paths
+
+| Item | Path |
+|---|---|
+| Static site root | `/var/www/jones-barbor-shop/` |
+| Widget assets | `/var/www/jones-barbor-shop/assets/` |
+| Booking platform app | `/srv/booking-platform/` |
+| Booking platform env | `/srv/booking-platform/.env` |
+| systemd unit | `/etc/systemd/system/booking-platform.service` |
+| nginx config | `/etc/nginx/sites-enabled/jones-barbor-shop` |
+
+### nginx Booking API Proxy Block
+
+The following block lives inside the `jones-barbor-shop.craftandconscious.com` server block:
+
+```nginx
+location /api/ {
+    proxy_pass http://127.0.0.1:3001/;
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_read_timeout 30s;
+    proxy_connect_timeout 5s;
+}
+```
+
+The trailing `/` on `proxy_pass` strips the `/api/` prefix before forwarding to the app.
+
+### Updating the Booking Platform on VPS
+
+```bash
+# Build locally
+cd /Users/ant/Projects/GitHub/booking-platform
+npm run build
+
+# Sync to VPS (excludes node_modules, .env, .git)
+rsync -av --exclude=node_modules --exclude=.env --exclude=.git \
+  --exclude=dist . root@74.208.9.49:/srv/booking-platform/
+rsync -av dist/ root@74.208.9.49:/srv/booking-platform/dist/
+
+# On VPS: install prod deps and restart
+ssh -i ~/.ssh/jones_vps root@74.208.9.49
+cd /srv/booking-platform && npm install --omit=dev
+systemctl restart booking-platform
+systemctl status booking-platform
+curl -s https://jones-barbor-shop.craftandconscious.com/api/health
+```
+
+### Updating Widget Assets
+
+```bash
+rsync -av /Users/ant/Projects/GitHub/Jones-Barbor-Shop/assets/ \
+  root@74.208.9.49:/var/www/jones-barbor-shop/assets/
+```
+
+### Adding Stripe / Resend / Twilio Keys
+
+```bash
+ssh -i ~/.ssh/jones_vps root@74.208.9.49
+nano /srv/booking-platform/.env
+# Add: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, STRIPE_SUCCESS_URL, STRIPE_CANCEL_URL
+# Add: RESEND_API_KEY, RESEND_FROM
+# Add: TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_FROM_NUMBER
+systemctl restart booking-platform
+```
 
 ## Rollback
 
@@ -67,15 +141,14 @@ git checkout <tag-name>
 # Then create a new branch or force-push (requires explicit user approval)
 ```
 
+To stop the booking API without touching the static site:
+
+```bash
+ssh -i ~/.ssh/jones_vps root@74.208.9.49
+systemctl stop booking-platform
+```
+
 Tag snapshots provide a clean restore point for every release.
-
-## Deployment Target: Future Options
-
-| Option | When to Consider |
-|---|---|
-| Netlify | If form handling (Netlify Forms), redirects, or preview deployments are needed |
-| Vercel | If the site gains a Next.js or framework-based rebuild |
-| Custom server | If a booking backend or CMS is introduced |
 
 ---
 

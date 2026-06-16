@@ -9,6 +9,22 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.15.0] — 2026-06-16
+
+### Changed
+- `index.html` — `data-api-url` changed from `http://localhost:3000` to `https://jones-barbor-shop.craftandconscious.com/api` (production HTTPS endpoint)
+- `index.html` — `data-service-id` updated to `cmqejj538000412vsed526d5u` (seeded production ID)
+- `index.html` — `data-location-id` updated to `cmqejj534000212vsf1pmccpy` (seeded production ID)
+
+### Added
+- HTTPS booking API live: Let's Encrypt TLS, nginx `/api/` reverse proxy, systemd `booking-platform.service` on port 3001
+- `assets/booking-widget.js` and `assets/booking-widget.css` deployed to VPS static root
+
+### Tag / Snapshot
+`v1.15.0__https-booking-platform__commit-91d81a0`
+
+---
+
 ## [1.14.0] — 2026-06-14
 
 ### Added

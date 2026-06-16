@@ -6,16 +6,50 @@ Use this file to preserve an escape path for migrations, risky changes, dependen
 
 | Field | Value |
 |---|---|
-| Date | 2026-06-14 |
+| Date | 2026-06-16 |
 | Branch | main |
-| Commit at audit completion | `b7ef9d8` |
-| Change type | Post-audit hygiene (B–F) — .nojekyll, favicon, doc updates, archive marker |
-| Risk level | Low |
+| Commit | `1394ef5` |
+| Change type | Production deployment — HTTPS booking API connection, `data-api-url` update |
+| Risk level | Medium — live site now makes real API calls; checkout fails without Stripe keys |
 | Person/agent making change | Claude Code |
 
 ## Pre-Change State
 
-v3.3 migration complete as of v1.14.0. All four groups (Quality Gates, Root Tracking, AI System, Sub-Agents) integrated and committed. This rollback plan now covers post-audit hygiene slices only.
+v1.14.0. `data-api-url` was `http://localhost:3000` (no live booking connection). Widget loaded but all API calls failed.
+
+## Booking API Rollback (VPS)
+
+If the booking platform needs to be taken offline:
+
+```bash
+ssh -i ~/.ssh/jones_vps root@74.208.9.49
+systemctl stop booking-platform
+systemctl disable booking-platform
+```
+
+To revert `data-api-url` in the website:
+```bash
+# In index.html, change data-api-url back to http://localhost:3000
+# Then commit and push
+git revert 1394ef5
+git push origin main
+```
+
+To redeploy the booking platform:
+```bash
+systemctl enable booking-platform
+systemctl start booking-platform
+systemctl status booking-platform
+```
+
+## VPS Deployment State (v1.15.0)
+
+- Service file: `/etc/systemd/system/booking-platform.service`
+- App directory: `/srv/booking-platform/`
+- Environment: `/srv/booking-platform/.env` (chmod 600)
+- Database: `postgresql://booking_platform:***@localhost:5432/booking_platform`
+- Port: 3001
+- nginx config: `/etc/nginx/sites-enabled/jones-barbor-shop` (proxies `/api/` to port 3001)
 
 ## Files Added (audit slices B–F)
 

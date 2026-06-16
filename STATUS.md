@@ -1,24 +1,30 @@
 # Status
 
-Last updated: 2026-06-14. Current version: v1.14.0 + post-audit hygiene.
+Last updated: 2026-06-16. Current version: v1.15.0.
 
 ## Live
 
 - URL: jones-barbor-shop.craftandconscious.com
-- Host: IONOS VPS (74.208.9.49), Nginx
+- Host: IONOS VPS (74.208.9.49), Nginx + HTTPS (Let's Encrypt)
 - Entry: /var/www/jones-barbor-shop/index.html
+- Booking API: https://jones-barbor-shop.craftandconscious.com/api (nginx `/api/` proxy → port 3001)
 
 ## Where We Left Off
 
-Post-audit hygiene complete. Full site audit run after v3.3 Groups 1–4 install. Slices B–G executed: `.nojekyll` added, SVG favicon added, `docs/VERSIONING.md` updated to v1.14.0, `Documents/` marked as legacy archive, `REPO_HEALTH_CHECK.md` and `ROLLBACK_PLAN.md` refreshed, root working files updated. `data-api-url` is still `http://localhost:3000` — not yet pushed to VPS.
+HTTPS booking platform integration complete. Booking platform deployed to VPS via systemd (`booking-platform.service`, port 3001). Nginx reverse-proxies `/api/` to the backend; TLS via Let's Encrypt. Widget assets (`assets/booking-widget.js`, `assets/booking-widget.css`) deployed to static root. `index.html` `data-api-url` updated to `https://jones-barbor-shop.craftandconscious.com/api`. Widget loads and displays services and availability. Health check confirmed `{"status":"ok"}`.
+
+Payments deferred — no Stripe/Resend/Twilio keys in production `.env`. Services are priced ($20–$65); checkout will fail until Stripe keys are added.
 
 ## What's Next
 
-### Production Deployment (Pending)
-1. Deploy booking-platform API to VPS (PM2 on port 3001)
-2. Update `index.html` `data-api-url` to `http://74.208.9.49:3001`
-3. Upload updated `index.html` + assets to `/var/www/jones-barbor-shop/`
-4. Test booking widget end-to-end on live site
+### Payments (When Ready)
+- Add `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_SUCCESS_URL`, `STRIPE_CANCEL_URL` to `/srv/booking-platform/.env` on VPS
+- `systemctl restart booking-platform`
+- Test end-to-end checkout
+
+### Notifications (When Ready)
+- Add `RESEND_API_KEY`, `RESEND_FROM`, `TWILIO_*` to `/srv/booking-platform/.env`
+- `systemctl restart booking-platform`
 
 ### Content (Before Launch)
 - Replace placeholder phone, address, email with real shop data
@@ -32,6 +38,6 @@ Post-audit hygiene complete. Full site audit run after v3.3 Groups 1–4 install
 - H-5: ARCHITECTURE.md stale
 - M-series: prefers-reduced-motion absent, missing ARIA roles
 
-## Blocker
+## Blockers
 
-Booking API not deployed to VPS — widget will fail all API calls until PM2 is running on port 3001.
+None. Booking widget is live and functional. Payment step will fail until Stripe keys are added.

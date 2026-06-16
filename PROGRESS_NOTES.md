@@ -46,6 +46,42 @@ Next action:
 
 ## Notes
 
+### 2026-06-16 — v1.15.0 HTTPS Booking Platform Integration
+
+Phase:
+
+```text
+Phase 3 — Production deployment
+```
+
+Completed:
+
+- Deployed booking platform to VPS at `/srv/booking-platform/` via rsync + local build
+- Created systemd unit `booking-platform.service` on port 3001
+- Provisioned local PostgreSQL, ran migrations, seeded 7 services and 4 staff
+- Configured Let's Encrypt TLS; nginx `/api/` reverse proxy added to site vhost
+- Deployed `assets/booking-widget.js` and `assets/booking-widget.css` to VPS static root
+- Updated `index.html` `data-api-url` to `https://jones-barbor-shop.craftandconscious.com/api`
+- Updated widget `data-service-id` and `data-location-id` to seeded production IDs
+- Confirmed widget loads; health check `{"status":"ok"}` over HTTPS
+- Payments deferred — no Stripe/Resend/Twilio keys in `.env`
+
+Blocked:
+
+- Stripe/Resend/Twilio keys not yet available; checkout step will fail
+
+Commit:
+
+```text
+1394ef5 deploy: connect website to HTTPS booking platform
+```
+
+Next action:
+
+> Add Stripe keys to `/srv/booking-platform/.env` when ready; restart service. Then add Resend/Twilio. Replace placeholder content last.
+
+---
+
 ### 2026-06-14 — v1.14.0 Sub Agents + Post-Audit Hygiene
 
 Phase:
