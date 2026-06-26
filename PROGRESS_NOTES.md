@@ -46,6 +46,43 @@ Next action:
 
 ## Notes
 
+### 2026-06-26 — v1.15.1 Snapshot Naming Prompt
+
+Phase:
+
+```text
+Maintenance — workflow tooling
+```
+
+Completed:
+
+- Added `prompts/repo_push_handoff_snapshot_tag_prompt_snapshot_naming_refined.md` — refined push/handoff/snapshot/tag workflow prompt (strict `vX.Y.Z__work-desc__commit-HASH` snapshot folder naming + mandatory RepoBackups path confirmation)
+- Updated `CHANGELOG.md`, `STATUS.md`, `PROGRESS_NOTE.md` for the v1.15.1 release
+
+Blocked:
+
+- None
+
+Checks run:
+
+```bash
+git status      # clean apart from the new prompt file
+git diff --stat # docs-only changes
+# static site — no build/test/lint scripts to run
+```
+
+Commit:
+
+```text
+ee6d64b docs(prompts): add refined repo push/snapshot/tag workflow prompt   # work commit
+```
+
+Next action:
+
+> No functional follow-up. Pre-existing items unchanged: add Stripe keys when ready, replace placeholder content before launch.
+
+---
+
 ### 2026-06-16 — v1.15.0 HTTPS Booking Platform Integration
 
 Phase:

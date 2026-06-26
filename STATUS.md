@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-06-16. Current version: v1.15.0.
+Last updated: 2026-06-26. Current version: v1.15.1.
 
 ## Live
 
@@ -14,6 +14,8 @@ Last updated: 2026-06-16. Current version: v1.15.0.
 HTTPS booking platform integration complete. Booking platform deployed to VPS via systemd (`booking-platform.service`, port 3001). Nginx reverse-proxies `/api/` to the backend; TLS via Let's Encrypt. Widget assets (`assets/booking-widget.js`, `assets/booking-widget.css`) deployed to static root. `index.html` `data-api-url` updated to `https://jones-barbor-shop.craftandconscious.com/api`. Widget loads and displays services and availability. Health check confirmed `{"status":"ok"}`.
 
 Payments deferred — no Stripe/Resend/Twilio keys in production `.env`. Services are priced ($20–$65); checkout will fail until Stripe keys are added.
+
+v1.15.1 adds a refined push/snapshot/tag workflow prompt under `prompts/` — workflow tooling only, no change to the live site, code, or runtime behavior.
 
 ## What's Next
 

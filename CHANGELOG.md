@@ -9,6 +9,15 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.15.1] — 2026-06-26
+
+### Added
+- `prompts/repo_push_handoff_snapshot_tag_prompt_snapshot_naming_refined.md` — refined repo push/handoff/snapshot/tag workflow prompt with strict descriptive snapshot-folder naming (`vX.Y.Z__work-desc__commit-HASH`) and a mandatory RepoBackups path confirmation step
+
+> Workflow tooling only — no site, code, or runtime behavior change. Work commit `ee6d64b`.
+
+---
+
 ## [1.15.0] — 2026-06-16
 
 ### Changed
