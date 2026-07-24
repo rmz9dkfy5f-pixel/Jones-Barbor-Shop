@@ -57,7 +57,11 @@ Booking platform env vars are stored in `/srv/booking-platform/.env` on the VPS 
 
 ## Booking Platform Deployment
 
-The booking API runs as a systemd service on the VPS alongside the static site.
+The booking API runs as a PM2 process (`booking-platform`, cluster mode) on the VPS alongside the
+static site. **Corrected 2026-07-24:** this section previously said systemd; the
+`booking-platform.service` systemd unit has actually been inactive since 2026-06-16, the same day
+the real process was migrated to PM2. Verified via read-only `systemctl status` (inactive/dead) and
+`pm2 describe booking-platform` (online, id 0) on the live VPS.
 
 ### VPS Paths
 
@@ -67,7 +71,7 @@ The booking API runs as a systemd service on the VPS alongside the static site.
 | Widget assets | `/var/www/jones-barbor-shop/assets/` |
 | Booking platform app | `/srv/booking-platform/` |
 | Booking platform env | `/srv/booking-platform/.env` |
-| systemd unit | `/etc/systemd/system/booking-platform.service` |
+| PM2 process | `booking-platform` (id 0, cluster mode) — `/etc/systemd/system/booking-platform.service` exists but is inactive |
 | nginx config | `/etc/nginx/sites-enabled/jones-barbor-shop` |
 
 ### nginx Booking API Proxy Block
@@ -104,8 +108,8 @@ rsync -av dist/ root@74.208.9.49:/srv/booking-platform/dist/
 # On VPS: install prod deps and restart
 ssh -i ~/.ssh/jones_vps root@74.208.9.49
 cd /srv/booking-platform && npm install --omit=dev
-systemctl restart booking-platform
-systemctl status booking-platform
+pm2 restart booking-platform
+pm2 status booking-platform
 curl -s https://jones-barbor-shop.craftandconscious.com/api/health
 ```
 
@@ -124,7 +128,7 @@ nano /srv/booking-platform/.env
 # Add: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, STRIPE_SUCCESS_URL, STRIPE_CANCEL_URL
 # Add: RESEND_API_KEY, RESEND_FROM
 # Add: TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_FROM_NUMBER
-systemctl restart booking-platform
+pm2 restart booking-platform
 ```
 
 ## Rollback
@@ -145,7 +149,7 @@ To stop the booking API without touching the static site:
 
 ```bash
 ssh -i ~/.ssh/jones_vps root@74.208.9.49
-systemctl stop booking-platform
+pm2 stop booking-platform
 ```
 
 Tag snapshots provide a clean restore point for every release.

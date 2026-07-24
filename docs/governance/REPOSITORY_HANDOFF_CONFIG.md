@@ -59,17 +59,22 @@ If the current machine does not match any row above, or more than one row could 
 - Deployment in scope: **yes** — real IONOS VPS deployment exists and is live
 - VPS/server alias: IONOS VPS `74.208.9.49` (`jones-barbor-shop.craftandconscious.com`)
 - Deployment root: `/var/www/jones-barbor-shop/` (static site); booking API at
-  `/srv/booking-platform/` (separate `booking-platform` repo, systemd service)
+  `/srv/booking-platform/` (separate `booking-platform` repo; process managed by PM2, not systemd)
 - Deployment branch or artifact: `main` branch, static files copied to server root; booking API
   deployed separately via its own repo
-- Service/container names: `booking-platform.service` (systemd), Nginx (reverse proxy `/api/` →
-  `127.0.0.1:3001`)
-- Read-only health checks: `curl https://jones-barbor-shop.craftandconscious.com/api` → expect
-  `{"status":"ok"}` (read-only, safe to run without authorization)
-- Log locations: not documented in this config — see server directly if authorized to access it
+- Service/container names: PM2 process `booking-platform` (id 0, cluster mode, `pm2 restart
+  booking-platform` to restart) — **verified 2026-07-24: the `booking-platform.service` systemd
+  unit has been inactive/dead since 2026-06-16; the real running process was migrated to PM2 the
+  same day and every repo doc (`STATUS.md`, `CONTEXT.md`, and this file's own first draft) still
+  described the stale systemd unit until this correction.** Nginx reverse-proxies `/api/` →
+  `127.0.0.1:3001`.
+- Read-only health checks: `curl https://jones-barbor-shop.craftandconscious.com/api/health` →
+  expect `{"status":"ok"}` (confirmed working 2026-07-24; read-only, safe to run without
+  authorization). Note the exact path is `/api/health`, not bare `/api` (that 404s).
+- Log locations: `/root/.pm2/logs/booking-platform-{out,error}-0.log` on the VPS
 - Rollback target: see this repo's own `ROLLBACK_PLAN.md`
 - **Actions requiring approval: any file copy to `/var/www/jones-barbor-shop/`, any
-  `systemctl restart/reload booking-platform`, any Nginx config change, any `.env` edit on the VPS —
+  `pm2 restart/reload booking-platform`, any Nginx config change, any `.env` edit on the VPS —
   all require separate, explicit, per-session authorization. Not authorized this session.**
 
 ## Safety Boundaries

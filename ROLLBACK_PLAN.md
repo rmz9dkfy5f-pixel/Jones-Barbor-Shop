@@ -19,12 +19,17 @@ v1.14.0. `data-api-url` was `http://localhost:3000` (no live booking connection)
 
 ## Booking API Rollback (VPS)
 
+**Corrected 2026-07-24:** this section documented `systemctl` commands, but the real process has
+run under PM2 (not systemd) since 2026-06-16 — verified via read-only `systemctl status` (shows
+`booking-platform.service` inactive/dead since 2026-06-16) and `pm2 describe booking-platform`
+(shows the actual online process, id 0, cluster mode). The `systemctl` commands below would not
+have affected the real process at all.
+
 If the booking platform needs to be taken offline:
 
 ```bash
 ssh -i ~/.ssh/jones_vps root@74.208.9.49
-systemctl stop booking-platform
-systemctl disable booking-platform
+pm2 stop booking-platform
 ```
 
 To revert `data-api-url` in the website:
@@ -37,14 +42,14 @@ git push origin main
 
 To redeploy the booking platform:
 ```bash
-systemctl enable booking-platform
-systemctl start booking-platform
-systemctl status booking-platform
+pm2 restart booking-platform
+pm2 status booking-platform
 ```
 
 ## VPS Deployment State (v1.15.0)
 
-- Service file: `/etc/systemd/system/booking-platform.service`
+- Process manager: PM2 (`booking-platform`, cluster mode, id 0) — corrected 2026-07-24; the
+  `/etc/systemd/system/booking-platform.service` unit exists but has been inactive since 2026-06-16
 - App directory: `/srv/booking-platform/`
 - Environment: `/srv/booking-platform/.env` (chmod 600)
 - Database: `postgresql://booking_platform:***@localhost:5432/booking_platform`
