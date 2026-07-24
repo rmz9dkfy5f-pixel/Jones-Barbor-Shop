@@ -1,6 +1,9 @@
 # Status
 
-Last updated: 2026-06-26. Current version: v1.15.1.
+Last updated: 2026-07-24. Current version: v1.15.2.
+
+v1.15.2 backfilled two missing rows (v1.15.0, v1.15.1) in `docs/VERSIONING.md`'s release history
+table — workflow tooling only, no site, code, or runtime behavior change.
 
 ## Live
 

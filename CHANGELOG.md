@@ -9,6 +9,20 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.15.2] — 2026-07-24
+
+### Fixed
+- `docs/VERSIONING.md` — release history table stopped at v1.14.0 despite the repo being at v1.15.1;
+  backfilled the two missing rows (v1.15.0, v1.15.1) using the real commit/tag data already recorded
+  here and in git tags
+
+> Workflow/docs only — no site, code, or runtime behavior change. Work commit `f674697`.
+
+### Tag / Snapshot
+`v1.15.2__versioning-table-sync__commit-f674697`
+
+---
+
 ## [1.15.1] — 2026-06-26
 
 ### Added

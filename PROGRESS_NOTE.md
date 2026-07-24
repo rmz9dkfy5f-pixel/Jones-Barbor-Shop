@@ -1,20 +1,28 @@
 # Progress Note
 
-Session ended 2026-06-26. Covered v1.15.1 — added the refined push/snapshot/tag workflow prompt.
+Session ended 2026-07-24. Covered v1.15.2 — backfilled missing rows in the version history table.
 
 ---
 
 ## Milestone
 
-**v1.15.1 Snapshot Naming Prompt.** Added a refined repo push/handoff/snapshot/tag workflow prompt under `prompts/` — strict descriptive snapshot-folder naming and a mandatory RepoBackups path confirmation step. Workflow tooling only; the live site, code, and runtime behavior are unchanged from v1.15.0 (HTTPS booking platform integration).
+**v1.15.2 Versioning Table Sync.** `docs/VERSIONING.md`'s release history table stopped at v1.14.0
+despite the repo being at v1.15.1; backfilled the two missing rows (v1.15.0, v1.15.1) using the
+real commit/tag data already recorded in `CHANGELOG.md` and git tags. Workflow/docs only; the live
+site, code, and runtime behavior are unchanged.
 
-Work commit: `ee6d64b`. Tag: `v1.15.1__snapshot-naming-prompt__commit-ee6d64b`.
+Work commit: `f674697`. Tag: `v1.15.2__versioning-table-sync__commit-f674697`.
 
 ---
 
-## Previous Milestone (v1.15.0)
+## Previous Milestone (v1.15.1)
 
-**Booking platform live.** The booking widget is connected to a real production API over HTTPS for the first time. The platform is deployed on the VPS via systemd and the website is updated to point to the HTTPS endpoint.
+**Snapshot Naming Prompt.** Added a refined repo push/handoff/snapshot/tag workflow prompt under
+`prompts/` — strict descriptive snapshot-folder naming and a mandatory RepoBackups path confirmation
+step. Workflow tooling only; the live site, code, and runtime behavior were unchanged from v1.15.0
+(HTTPS booking platform integration).
+
+Work commit: `ee6d64b`. Tag: `v1.15.1__snapshot-naming-prompt__commit-ee6d64b`.
 
 ---
 
