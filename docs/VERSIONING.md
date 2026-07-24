@@ -114,6 +114,8 @@ Codenames are used for all releases in this project. They are paired with the ve
 | v1.12.0 | 2026-06-14 | Root-Tracking | Install v3.3 root project control files — PHASE_GATES, BACKLOG, PLAN, DECISION_LOG, LESSONS_LEARNED, SLICE_REVIEWS, PROGRESS_NOTES |
 | v1.13.0 | 2026-06-14 | AI-System | Install v3.3 AI engineering memory system — `ai/` folder with agents, sessions, templates |
 | v1.14.0 | 2026-06-14 | Sub-Agents | Install v3.3 sub-agent roster — 7 Claude Code agents in `.claude/agents/` |
+| v1.15.0 | 2026-06-16 | HTTPS-Booking-Platform | Update `index.html` `data-api-url` to production HTTPS endpoint; update seeded `data-service-id`/`data-location-id` |
+| v1.15.1 | 2026-06-26 | Snapshot-Naming-Prompt | Add refined repo push/handoff/snapshot/tag workflow prompt with strict snapshot naming (workflow tooling only, no site/code/runtime change) |
 
 ## 10. Agent Rules
 
