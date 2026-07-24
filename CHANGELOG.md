@@ -9,6 +9,22 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.15.3] — 2026-07-24
+
+### Fixed
+- `STATUS.md`, `CONTEXT.md`, `ROLLBACK_PLAN.md`, `docs/DEPLOYMENT.md`,
+  `docs/governance/REPOSITORY_HANDOFF_CONFIG.md` — all documented the booking API as running under
+  systemd (`booking-platform.service`); verified via read-only checks on the live VPS that this
+  unit has been inactive since 2026-06-16, the same day the real process was migrated to PM2
+  (`booking-platform`, cluster mode, id 0). Corrected all commands and references.
+
+> Docs-only — no restart, deploy, or config change performed on the VPS. Work commit `42b3b77`.
+
+### Tag / Snapshot
+`v1.15.3__pm2-docs-correction__commit-42b3b77`
+
+---
+
 ## [1.15.2] — 2026-07-24
 
 ### Fixed

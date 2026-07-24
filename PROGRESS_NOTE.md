@@ -1,30 +1,35 @@
 # Progress Note
 
-Session ended 2026-07-24. Covered v1.15.2 — backfilled missing rows in the version history table.
+Session ended 2026-07-24. Covered v1.15.3 — corrected a real systemd-vs-PM2 documentation gap.
 
 ---
 
 ## Milestone
 
-**v1.15.2 Versioning Table Sync.** `docs/VERSIONING.md`'s release history table stopped at v1.14.0
-despite the repo being at v1.15.1; backfilled the two missing rows (v1.15.0, v1.15.1) using the
-real commit/tag data already recorded in `CHANGELOG.md` and git tags. Also added
-`docs/governance/REPOSITORY_HANDOFF_CONFIG.md`. Workflow/docs only; the live site, code, and
-runtime behavior are unchanged. No deployment occurred.
+**v1.15.3 PM2 Docs Correction.** `STATUS.md`, `CONTEXT.md`, `ROLLBACK_PLAN.md`,
+`docs/DEPLOYMENT.md`, and `docs/governance/REPOSITORY_HANDOFF_CONFIG.md` all documented the booking
+API as running under systemd. Verified via read-only checks on the live VPS (health check
+`/api/health` → `{"status":"ok"}`; `systemctl status booking-platform` → inactive since 2026-06-16;
+`pm2 describe booking-platform` → online, id 0, cluster mode) that the real process has run under
+PM2 since the same day it was documented as systemd. Corrected every command and reference,
+including the safety-critical `ROLLBACK_PLAN.md`. Docs-only — no restart, deploy, or config change
+performed on the VPS.
 
-Work commits: `f674697`, `b770fb2`. Tag: `v1.15.2__versioning-table-sync__commit-b770fb2`
-(applied at final HEAD).
+Work commit: `42b3b77`. Tag: `v1.15.3__pm2-docs-correction__commit-42b3b77`.
 
 ---
 
-## Previous Milestone (v1.15.1)
+## Previous Milestone (v1.15.2)
 
-**Snapshot Naming Prompt.** Added a refined repo push/handoff/snapshot/tag workflow prompt under
-`prompts/` — strict descriptive snapshot-folder naming and a mandatory RepoBackups path confirmation
-step. Workflow tooling only; the live site, code, and runtime behavior were unchanged from v1.15.0
-(HTTPS booking platform integration).
+**Versioning Table Sync.** `docs/VERSIONING.md`'s release history table stopped at v1.14.0 despite
+the repo being at v1.15.1; backfilled the two missing rows (v1.15.0, v1.15.1) using the real
+commit/tag data already recorded in `CHANGELOG.md` and git tags. Also added
+`docs/governance/REPOSITORY_HANDOFF_CONFIG.md`. Workflow/docs only; the live site, code, and
+runtime behavior were unchanged. No deployment occurred.
 
-Work commit: `ee6d64b`. Tag: `v1.15.1__snapshot-naming-prompt__commit-ee6d64b`.
+Work commits: `f674697`, `b770fb2`. Tag: `v1.15.2__versioning-table-sync__commit-b770fb2`.
+
+---
 
 ---
 
