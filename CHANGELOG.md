@@ -16,10 +16,16 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
   backfilled the two missing rows (v1.15.0, v1.15.1) using the real commit/tag data already recorded
   here and in git tags
 
-> Workflow/docs only — no site, code, or runtime behavior change. Work commit `f674697`.
+### Added
+- `docs/governance/REPOSITORY_HANDOFF_CONFIG.md` — repository-specific handoff configuration
+  (validation contract, snapshot destination, deployment contract). `deploy_vps` authorization
+  explicitly `requires_separate_explicit_authorization` — not granted this release.
+
+> Workflow/docs only — no site, code, or runtime behavior change. No deployment occurred.
+> Work commits `f674697`, `b770fb2`.
 
 ### Tag / Snapshot
-`v1.15.2__versioning-table-sync__commit-f674697`
+`v1.15.2__versioning-table-sync__commit-b770fb2` (tag applied at final HEAD, after both commits)
 
 ---
 

@@ -8,10 +8,12 @@ Session ended 2026-07-24. Covered v1.15.2 — backfilled missing rows in the ver
 
 **v1.15.2 Versioning Table Sync.** `docs/VERSIONING.md`'s release history table stopped at v1.14.0
 despite the repo being at v1.15.1; backfilled the two missing rows (v1.15.0, v1.15.1) using the
-real commit/tag data already recorded in `CHANGELOG.md` and git tags. Workflow/docs only; the live
-site, code, and runtime behavior are unchanged.
+real commit/tag data already recorded in `CHANGELOG.md` and git tags. Also added
+`docs/governance/REPOSITORY_HANDOFF_CONFIG.md`. Workflow/docs only; the live site, code, and
+runtime behavior are unchanged. No deployment occurred.
 
-Work commit: `f674697`. Tag: `v1.15.2__versioning-table-sync__commit-f674697`.
+Work commits: `f674697`, `b770fb2`. Tag: `v1.15.2__versioning-table-sync__commit-b770fb2`
+(applied at final HEAD).
 
 ---
 
