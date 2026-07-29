@@ -65,3 +65,16 @@ Use the `test-verifier` agent.
 
 Find and run safe verification commands for the changes just made. Do not edit files. Report pass/fail and commit readiness.
 ```
+
+## Model Usage Record
+
+- Tool used:
+- Surface used:
+- Model used:
+- Effort/thinking level:
+- Why this model was chosen:
+- If in VS Code, why Codex or Claude Code was chosen:
+- Was the model sufficient? Yes / No
+- Should similar tasks use the same route? Yes / No
+- Escalation needed next time? Yes / No
+- Notes:

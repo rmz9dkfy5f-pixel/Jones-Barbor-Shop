@@ -128,3 +128,10 @@ DONE_CRITERIA.md
 ROLLBACK_PLAN.md
 ai/agents/AGENT_REVIEW_GATES.md
 ```
+
+## Mandatory Model Selection Gate
+
+Before substantial AI-assisted work, read `MODEL_SELECTION_GATE.md` and show its complete Model
+Selection Brief. Do not begin implementation until the brief has been shown. When VS Code is the
+current surface, compare both Codex in VS Code and Claude Code in VS Code, then select a primary
+and fallback executor. The visible picker overrides dated model examples.
