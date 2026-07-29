@@ -118,6 +118,7 @@ Codenames are used for all releases in this project. They are paired with the ve
 | v1.15.1 | 2026-06-26 | Snapshot-Naming-Prompt | Add refined repo push/handoff/snapshot/tag workflow prompt with strict snapshot naming (workflow tooling only, no site/code/runtime change) |
 | v1.15.2 | 2026-07-24 | Versioning-Table-Sync | Backfill v1.15.0/v1.15.1 rows in this table; add `docs/governance/REPOSITORY_HANDOFF_CONFIG.md` |
 | v1.15.3 | 2026-07-24 | PM2-Docs-Correction | Correct `STATUS.md`, `CONTEXT.md`, `ROLLBACK_PLAN.md`, `docs/DEPLOYMENT.md`, and `docs/governance/REPOSITORY_HANDOFF_CONFIG.md`: booking API documented as systemd but verified running under PM2 since 2026-06-16 (docs-only, no restart/deploy performed) |
+| v1.15.4 | 2026-07-29 | Model-Selection-Gate | Add mandatory model-selection brief, reusable prompt, and model usage handoff record (governance/docs only, no site/code/runtime change) |
 
 ## 10. Agent Rules
 

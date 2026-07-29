@@ -9,6 +9,25 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ---
 
+## [1.15.4] — 2026-07-29
+
+### Added
+- `MODEL_SELECTION_GATE.md` — required model-selection brief for substantial AI-assisted work
+- `PROMPT_MODEL_SELECTION_GATE.md` — reusable prompt for invoking the model-selection gate
+
+### Changed
+- `AGENTS.md` and `CLAUDE.md` — require the model-selection brief before substantial AI-assisted
+  work, including explicit Codex-vs-Claude Code routing when VS Code is the current surface
+- `ai/agents/AGENT_HANDOFF_TEMPLATE.md` — adds a model usage record section for handoffs
+
+> Governance/docs only — no site, code, deployment, or runtime behavior change. Work commit
+> `b915062`.
+
+### Tag / Snapshot
+`v1.15.4__model-selection-gate__commit-b915062`
+
+---
+
 ## [1.15.3] — 2026-07-24
 
 ### Fixed

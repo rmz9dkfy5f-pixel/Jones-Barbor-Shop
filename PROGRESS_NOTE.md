@@ -1,10 +1,21 @@
 # Progress Note
 
-Session ended 2026-07-24. Covered v1.15.3 — corrected a real systemd-vs-PM2 documentation gap.
+Session ended 2026-07-29. Covered v1.15.4 — added the mandatory model-selection gate.
 
 ---
 
 ## Milestone
+
+**v1.15.4 Model Selection Gate.** Added `MODEL_SELECTION_GATE.md` and
+`PROMPT_MODEL_SELECTION_GATE.md`, wired the required brief into `AGENTS.md` and `CLAUDE.md`, and
+added a model usage record section to `ai/agents/AGENT_HANDOFF_TEMPLATE.md`. Governance/docs only —
+no site, code, deployment, or runtime behavior change.
+
+Work commit: `b915062`. Tag: `v1.15.4__model-selection-gate__commit-b915062`.
+
+---
+
+## Previous Milestone (v1.15.3)
 
 **v1.15.3 PM2 Docs Correction.** `STATUS.md`, `CONTEXT.md`, `ROLLBACK_PLAN.md`,
 `docs/DEPLOYMENT.md`, and `docs/governance/REPOSITORY_HANDOFF_CONFIG.md` all documented the booking
@@ -18,8 +29,6 @@ performed on the VPS.
 Work commit: `42b3b77`. Tag: `v1.15.3__pm2-docs-correction__commit-42b3b77`.
 
 ---
-
-## Previous Milestone (v1.15.2)
 
 **Versioning Table Sync.** `docs/VERSIONING.md`'s release history table stopped at v1.14.0 despite
 the repo being at v1.15.1; backfilled the two missing rows (v1.15.0, v1.15.1) using the real
@@ -64,6 +73,6 @@ Work commits: `f674697`, `b770fb2`. Tag: `v1.15.2__versioning-table-sync__commit
 
 ## What's Next
 
-1. Add Stripe keys to `/srv/booking-platform/.env` when ready; restart service
-2. Add Resend/Twilio keys when ready; restart service
+1. Add Stripe keys to `/srv/booking-platform/.env` when ready; `pm2 restart booking-platform`
+2. Add Resend/Twilio keys when ready; `pm2 restart booking-platform`
 3. Replace placeholder content (phone, address, barber info, photos)

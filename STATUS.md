@@ -1,11 +1,13 @@
 # Status
 
-Last updated: 2026-07-24. Current version: v1.15.3.
+Last updated: 2026-07-29. Current version: v1.15.4.
 
 v1.15.2 backfilled two missing rows (v1.15.0, v1.15.1) in `docs/VERSIONING.md`'s release history
 table. v1.15.3 corrects a real documentation-vs-reality gap: the booking API's process manager was
 documented as systemd but has actually run under PM2 since 2026-06-16. Both are workflow/docs
 corrections — no site, code, or runtime behavior change; no deployment or restart was performed.
+v1.15.4 adds the mandatory model-selection gate and model usage handoff record, also governance/docs
+only with no site, code, deployment, or runtime behavior change.
 
 ## Live
 
@@ -25,7 +27,7 @@ verified and fixed today.** Nginx reverse-proxies `/api/` to the backend; TLS vi
 
 Payments deferred — no Stripe/Resend/Twilio keys in production `.env`. Services are priced ($20–$65); checkout will fail until Stripe keys are added.
 
-v1.15.1 adds a refined push/snapshot/tag workflow prompt under `prompts/` — workflow tooling only, no change to the live site, code, or runtime behavior. v1.15.2 backfilled the versioning table; v1.15.3 corrects this systemd→PM2 documentation gap.
+v1.15.1 adds a refined push/snapshot/tag workflow prompt under `prompts/` — workflow tooling only, no change to the live site, code, or runtime behavior. v1.15.2 backfilled the versioning table; v1.15.3 corrects this systemd→PM2 documentation gap. v1.15.4 adds `MODEL_SELECTION_GATE.md`, `PROMPT_MODEL_SELECTION_GATE.md`, and matching usage-record requirements.
 
 ## What's Next
 
