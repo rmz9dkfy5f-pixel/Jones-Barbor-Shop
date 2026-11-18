@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Versioned booking widget builds are named by the SHA-256 of their exact bytes: never convert their line endings.
+assets/booking-widget.*.js -text
+assets/booking-widget.*.css -text
