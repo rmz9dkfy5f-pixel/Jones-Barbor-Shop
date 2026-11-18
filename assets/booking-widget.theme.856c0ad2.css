@@ -1,0 +1,41 @@
+/*
+ * Jones Barber Shop theme (interim): dark surface, gold accents.
+ *
+ * Load this AFTER the widget stylesheet (booking-widget.css). It only sets the --bw-* colour variables, so the
+ * widget's own layout and focus rules stay as they are. src/themes.contrast.test.ts holds it to the same WCAG
+ * 2.1 AA pairs as the default colours. A later slice (2.6) replaces this file with colours the API serves.
+ *
+ * Changes from the colours the Jones page applied to the old widget (agreed as Q2 of
+ * plans/2026-11-18-release-widget-r017-and-provider-readiness-r018.md, shown to the owner before use):
+ *   --bw-primary            #e0474c -> #c73b3f   white text 4.06:1 -> 5.09:1 (the old hover colour)
+ *   --bw-text-muted         #6b6456 -> #a09884   "no times" text 3.30:1 -> 6.75:1 (the page's label colour)
+ *   --bw-border-control     gold at 25% (about 1.8:1) -> #75663f   3.44:1 against the page, 3.27:1 against inputs
+ *   --bw-focus              gold -> cream        a gold ring is only 2.2:1 next to the red button
+ *   --bw-error-text         #e0474c -> #ff9a9e   on the dark red message background
+ * A selected time is now the primary colour (red with white text), because the widget uses one variable for the
+ * primary button and the selected time; on the old page it was gold. Everything else keeps the page's values.
+ */
+.bw-root {
+  --bw-bg: #0d0d14;
+  --bw-text: #f5f1e8;
+  --bw-text-muted: #a09884;
+  --bw-header-bg: #13131e;
+  --bw-border: #3b2e1e;          /* decorative dividers only */
+  --bw-border-control: #75663f;
+  --bw-focus: #f5f1e8;
+  --bw-primary: #c73b3f;
+  --bw-primary-hover: #a8302f;
+  --bw-on-primary: #ffffff;
+  --bw-primary-tint: #2a2418;
+  --bw-secondary-bg: #1d1d2e;
+  --bw-secondary-hover: #26263a;
+  --bw-secondary-text: #f5f1e8;
+  --bw-error-bg: #2a1215;
+  --bw-error-text: #ff9a9e;
+  --bw-error-border: #7a2e33;
+  --bw-success: #5fd08a;
+  --bw-step-active-bg: #f5b544;
+  --bw-step-active-text: #050509;
+  --bw-step-done-bg: #3b2e1e;
+  --bw-step-done-text: #f5b544;
+}
