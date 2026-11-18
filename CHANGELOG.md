@@ -7,7 +7,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ## [Unreleased]
 
-### Added (not deployed)
+### Added (on the server as an unlinked preview since 2026-11-18; the live page is unchanged)
 - `assets/booking-widget.39815412.js`, `assets/booking-widget.70e439a1.css` — the rebuilt booking widget (grouped times, accessibility, "Add to calendar") and its stylesheet, built from booking-platform commit `fed5f34`; file names carry the first 8 hex of each file's SHA-256 so browsers cannot mix old and new files
 - `assets/booking-widget.theme.856c0ad2.css` — the shop's dark gold theme as the widget's `--bw-*` colour variables (WCAG 2.1 AA; five values nudged to pass: red button, "no times" text, input border, focus ring, error text)
 - `booking-next.html` — a parallel preview page (not linked, `noindex`) that loads the new files; the live `index.html` is unchanged by this entry

@@ -1,6 +1,6 @@
 # Plan: New booking widget, first on a parallel page, then on the live page
 
-Date: 2026-11-18. Status: **DRAFTED LOCALLY on branch `feat/new-booking-widget-parallel-page`; NOT pushed, NOT deployed.** Nothing in this plan reaches the live site until the owner says so, per slice.
+Date: 2026-11-18. Status: **Slice 1 PLACED ON THE SERVER as a preview on 2026-11-18** (the three asset files and `booking-next.html`, four new files, additive; owner: "do slice 3, put the parallel page on the server"). The branch `feat/new-booking-widget-parallel-page` is **not pushed**. **Slice 2 (the cutover of `index.html`) is NOT done:** the live page is unchanged and still serves the old widget. Nothing reaches the live page until the owner says so.
 Written for: the owner.
 Parent plan (the real plan and its approval live in the booking platform repository): `booking-platform/plans/2026-11-18-release-widget-r017-and-provider-readiness-r018.md`, approved by the owner 2026-11-18 ("approve the plan and go with the defaults"), slice 1 only. Its Model Selection Brief covers this work.
 
