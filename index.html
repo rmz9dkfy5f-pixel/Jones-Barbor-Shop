@@ -20,7 +20,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/booking-widget.css" />
+  <link rel="stylesheet" href="./assets/booking-widget.70e439a1.css" />
+  <!-- Booking widget theme: keep this AFTER the widget stylesheet so its colour variables win. -->
+  <link rel="stylesheet" href="./assets/booking-widget.theme.856c0ad2.css" />
 
   <style>
     /* ─── Design Tokens ──────────────────────────────────────────────────── */
@@ -2355,58 +2357,24 @@
     })();
   </script>
 
-  <!-- ── Jones Barber Shop theme overrides for booking widget ── -->
+  <!-- ── Jones Barber Shop layout fit for the booking widget ──
+       Colours come from assets/booking-widget.theme.856c0ad2.css (the widget's --bw-* variables). Only layout is set here. -->
   <style>
-    /* Remove form-card padding — .bw-root fills flush, .form-card provides the outer border */
+    /* .bw-root fills the card flush; .form-card provides the outer border */
     #booking-widget { padding: 0; }
     .bw-root {
-      background: #0d0d14;
       border: none;
       border-radius: 0;
-      color: #f5f1e8;
       font-family: 'Space Grotesk', sans-serif;
       max-width: 100%;
     }
-    .bw-header { background: #13131e; border-bottom: 1px solid rgba(245,177,68,.2); }
-    .bw-header h2, .bw-header p { color: #f5f1e8; }
-    .bw-header p { color: #a09884; }
     /* Step indicator alignment — Space Grotesk has line-height > 1 which offsets dot numbers */
     .bw-step-dot { line-height: 1; min-width: 28px; min-height: 28px; }
     .bw-step-line { align-self: center; }
-    .bw-summary { background: rgba(245,177,68,.08); border-bottom: 1px solid rgba(245,177,68,.15); color: #f5b544; }
-    .bw-date-nav button { background: #13131e; border-color: rgba(245,177,68,.3); color: #f5f1e8; }
-    .bw-date-nav button:hover { background: #1d1d2e; }
-    .bw-date-nav span { color: #f5f1e8; }
-    .bw-slot { background: #13131e; border-color: rgba(245,177,68,.25); color: #f5f1e8; }
-    .bw-slot:hover { background: rgba(245,177,68,.12); border-color: #f5b544; }
-    .bw-slot.bw-slot--selected { background: #f5b544; border-color: #f5b544; color: #050509; }
-    .bw-no-slots { color: #6b6456; }
-    .bw-form-group label { color: #a09884; }
-    .bw-form-group input,
-    .bw-form-group textarea,
-    .bw-form-group select {
-      background: #13131e;
-      border-color: rgba(245,177,68,.25);
-      color: #f5f1e8;
-    }
-    .bw-form-group select option { background: #13131e; color: #f5f1e8; }
-    .bw-form-group input:focus,
-    .bw-form-group textarea:focus,
-    .bw-form-group select:focus { border-color: #f5b544; }
-    .bw-btn--primary { background: #e0474c; color: #fff; }
-    .bw-btn--primary:hover:not(:disabled) { background: #c73b3f; }
-    .bw-btn--secondary { background: #1d1d2e; color: #f5f1e8; border: 1px solid rgba(245,177,68,.2); }
-    .bw-btn--secondary:hover:not(:disabled) { background: #26263a; }
-    .bw-error { background: rgba(224,71,76,.1); border-color: rgba(224,71,76,.4); color: #e0474c; }
-    .bw-confirmed h3 { color: #f5b544; }
-    .bw-confirmed p { color: #a09884; }
-    .bw-loading { color: #6b6456; }
-    .bw-countdown { color: #e0474c; }
-    .bw-countdown.bw-countdown--ok { color: #f5b544; }
   </style>
 
   <script
-    src="./assets/booking-widget.js"
+    src="./assets/booking-widget.39815412.js"
     data-container="booking-widget"
     data-api-url="https://jones-barbor-shop.craftandconscious.com/api"
     data-service-id="cmqejj538000412vsed526d5u"

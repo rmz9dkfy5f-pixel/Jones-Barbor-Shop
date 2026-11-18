@@ -13,6 +13,9 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 - `booking-next.html` — a parallel preview page (not linked, `noindex`) that loads the new files; the live `index.html` is unchanged by this entry
 - `plans/2026-11-18-new-booking-widget-parallel-page.md`
 
+### Changed (cutover; not deployed, to be landed only on the owner's word)
+- `index.html` — loads the versioned widget stylesheet and then the shop theme (the order matters: the theme's variables must win) and the versioned script; the 29 inline colour rules written for the old widget are replaced by a 3-rule layout block (flush card, font, step-dot alignment); the `.bw-fallback` rules are kept
+
 ---
 
 ## [1.15.4] — 2026-07-29
