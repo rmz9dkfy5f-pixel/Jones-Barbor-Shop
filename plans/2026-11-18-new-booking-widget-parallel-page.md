@@ -1,6 +1,6 @@
 # Plan: New booking widget, first on a parallel page, then on the live page
 
-Date: 2026-11-18. Status: **Slice 1 PLACED ON THE SERVER as a preview on 2026-11-18** (the three asset files and `booking-next.html`, four new files, additive; owner: "do slice 3, put the parallel page on the server"). The branch `feat/new-booking-widget-parallel-page` is **not pushed**. **Slice 2 (the cutover of `index.html`) is NOT done:** the live page is unchanged and still serves the old widget. Nothing reaches the live page until the owner says so.
+Date: 2026-11-18. Status: **Slice 1 PLACED ON THE SERVER as a preview on 2026-11-18** (the three asset files and `booking-next.html`, four new files, additive; owner: "do slice 3, put the parallel page on the server"). **Slice 2 (the cutover of `index.html`) was DONE on 2026-11-18** on the owner's written accept ("I accept, put the new widget on the live page"): the live page now uses the new widget (section 11). Slice 1's commits were landed on `main` first (`f04f1c6`), the cutover and these notes after the copy.
 Written for: the owner.
 Parent plan (the real plan and its approval live in the booking platform repository): `booking-platform/plans/2026-11-18-release-widget-r017-and-provider-readiness-r018.md`, approved by the owner 2026-11-18 ("approve the plan and go with the defaults"), slice 1 only. Its Model Selection Brief covers this work.
 
@@ -73,8 +73,14 @@ None here; the defaults for Q1 to Q8 are recorded in the parent plan.
 
 ## 10. Approval Checkpoint
 
-> Nothing in this branch is deployed, pushed or landed. Slice 1's files may be placed on the server, and slice 2 landed and copied, only on the owner's word for each.
+> Slice 1's files were placed and landed, and slice 2 was copied and landed, each on the owner's word (2026-11-18). Nothing further is pending in this plan.
 
 ## 11. Completion Notes
 
-*To be filled when slices 1 and 2 are placed and accepted.*
+**Slice 2 executed 2026-11-18.** Bytes of `index.html` taken with `git show b67482f:index.html` (91,649 bytes, LF, sha256 prefix `5363991a9bd8401e`): the accepted preview page without the `noindex` tag and the `[Preview]` title (the only two differences, checked with `diff`). Read-only preflight on the server passed (the three live files still `c5806afedf8f20ec`, `2c9d82a2ae196c5d`, `bb2499ce3347a308`; the three new asset files present; no `.part` leftovers; `nginx -t` ok; `booking-platform` active, `NRestarts=0`; 57 GB free). Then `cp -a /var/www/jones-barbor-shop /var/www/jones-barbor-shop.snapshot-pre-widget-v2-20261118T182440Z` (its `index.html` is `c5806afedf8f20ec`), the new bytes streamed to `.index.html.part`, `root:root` 644, hash checked, and renamed over `index.html` (the only overwriting step).
+
+**Verification.** Public `GET` of `/` and `/index.html` return 200 `text/html` with `5363991a9bd8401e`; the script, stylesheet and theme return the expected hashes and types; the old `booking-widget.js` and `.css` and `booking-next.html` are unchanged. A before and after listing of every file (path, size, owner, mode, mtime) differs in exactly one line, `index.html`; no other file changed. The page has no `noindex`, the normal title and no link to the preview. `nginx -t` ok, `NRestarts=0`, 0 journal entries at level 50 or above in the 15 minutes after, no new nginx error lines (today's lines are other sites on the server). The public page was walked in jsdom against the real production API up to the time screen, without submitting: 9 of 9 (new versioned files only, theme after the stylesheet, widget mounts, `--bw-primary` `#c73b3f`, 7 services, real times grouped Afternoon 9 and Evening 3, radio set with a legend, request button disabled, only GET requests).
+
+**Rollback (not run).** `ssh -i ~/.ssh/jones_vps_rsa root@74.208.9.49` then, in `/var/www/jones-barbor-shop`, copy the snapshot's `index.html` back (`cp -p /var/www/jones-barbor-shop.snapshot-pre-widget-v2-20261118T182440Z/index.html .index.html.part && mv -f .index.html.part index.html`) and check it hashes `c5806afedf8f20ec`; the old widget files were never removed. No restart, no database change.
+
+**Still the owner's.** Looking at the live page on a real phone and desktop. A selected time is red (one colour with the primary button), where the old page showed gold; a separate gold variable remains a possible later change in the widget.
