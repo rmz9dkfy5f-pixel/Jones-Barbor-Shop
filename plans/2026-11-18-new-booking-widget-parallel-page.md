@@ -20,6 +20,8 @@ Put the rebuilt booking widget (grouped times, accessibility, "Add to calendar")
 - About 29 inline `.bw-*` rules (a 2,442-character block) recolour the OLD widget class by class; four of the classes no longer exist in the new widget.
 - Three of the shop's colour pairs failed WCAG 2.1 AA (white on the red button 4.06:1, "no times" text 3.30:1, input border 1.78:1).
 
+- **Server facts (read-only SSH look, 2026-11-18, nothing changed):** the web root is `/var/www/jones-barbor-shop` (nginx site `jones-barbor-shop`; directory owned by `www-data`; the page and the old widget files owned by uid 501, group `staff`, with their original times, so they were copied from the owner's Mac); there is no git checkout; the nginx site sets no `expires` or `add_header`, hence no `Cache-Control`; the live SHA-256 prefixes equal this repository's `main`. New files are therefore copied as root over SSH with mode 644 and checked by SHA-256 on the server. Full findings: booking-platform `plans/2026-11-18-release-widget-r017-and-provider-readiness-r018.md`, section 15, Slice 2.
+
 ## 4. Source-of-Truth Docs Reviewed
 
 `CLAUDE.md`, `CHANGE_CONTROL.md` (deployment is "ask before editing": this branch does not touch deployment), `docs/TESTING.md` (manual checklist, to be run by the owner on the parallel page), `docs/DEPLOYMENT.md` (stale; not relied on).
@@ -48,13 +50,13 @@ Full SHA-256 of the built files (from a clean export of booking-platform commit 
 
 ### Slice 2 (commit 2): cutover of `index.html`
 
-**Planned edits.** `index.html` takes the same content as `booking-next.html` without the `noindex` tag and the `[Preview]` title. The new `index.html` is copied to the server last, after the new assets are already there. The old `booking-widget.js` and `.css` stay on the server, so rolling back is copying the saved old `index.html` back.
+**Planned edits.** `index.html` takes the same content as `booking-next.html` without the `noindex` tag and the `[Preview]` title. The new `index.html` is copied to the server last, after the new assets are already there. The old `booking-widget.js` and `.css` stay on the server. Before `index.html` is replaced the whole web root is copied to a sibling directory, `cp -a /var/www/jones-barbor-shop /var/www/jones-barbor-shop.snapshot-pre-widget-v2-<UTC>` (the server's own convention for other sites; never served), so rolling back is copying `index.html` back from that snapshot.
 **Validation.** 10 of 10 on the same smoke test; after the copy, public `GET` hashes equal this repository's files; the owner confirms the page.
 **Stop condition.** The owner's go-ahead for this slice, after slice 1 is accepted.
 
 ## 7. Rollback
 
-Slice 1: delete the three assets and `booking-next.html`. Slice 2: copy the saved old `index.html` back (the old script and stylesheet were never removed), or revert the cutover commit. No restart, no database change.
+Slice 1: delete the three assets and `booking-next.html`. Slice 2: copy `index.html` back from the snapshot directory (the old script and stylesheet were never removed), or revert the cutover commit and copy that. No restart, no database change.
 
 ## 8. Risks
 
