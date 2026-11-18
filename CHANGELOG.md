@@ -10,11 +10,17 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 ### Added (2026-11-18; the three assets were first placed on the server as an unlinked preview, then used by the live page)
 - `assets/booking-widget.39815412.js`, `assets/booking-widget.70e439a1.css` — the rebuilt booking widget (grouped times, accessibility, "Add to calendar") and its stylesheet, built from booking-platform commit `fed5f34`; file names carry the first 8 hex of each file's SHA-256 so browsers cannot mix old and new files
 - `assets/booking-widget.theme.856c0ad2.css` — the shop's dark gold theme as the widget's `--bw-*` colour variables (WCAG 2.1 AA; five values nudged to pass: red button, "no times" text, input border, focus ring, error text)
-- `booking-next.html` — a parallel preview page (not linked, `noindex`) that loads the new files; it stays on the server until the owner removes it
+- `booking-next.html` — a parallel preview page (not linked, `noindex`) that loaded the new files for the owner's review; removed again on 2026-11-18 (see Removed)
 - `plans/2026-11-18-new-booking-widget-parallel-page.md`
 
 ### Changed (cutover, LIVE on the server since 2026-11-18, owner: "I accept, put the new widget on the live page")
 - `index.html` — loads the versioned widget stylesheet and then the shop theme (the order matters: the theme's variables must win) and the versioned script; the 29 inline colour rules written for the old widget are replaced by a 3-rule layout block (flush card, font, step-dot alignment); the `.bw-fallback` rules are kept. Copied by hand as root over SSH after a whole-web-root snapshot (`/var/www/jones-barbor-shop.snapshot-pre-widget-v2-20261118T182440Z`, never served); the old `assets/booking-widget.js` and `.css` were left in place. Rollback: copy the snapshot's `index.html` back (sha256 prefix `c5806afedf8f20ec`)
+
+### Removed (2026-11-18, owner: "do the cleanup, remove the preview page")
+- `booking-next.html` — the preview page, deleted from the web root on the server (`rm --` of that one path after its hash `ec1cb2997c543af8` was checked; the other 21 files are unchanged) and from the repository; to restore it, `git show f04f1c6:booking-next.html`. The three hash-named widget files stay (the live page uses them).
+
+### Fixed (documentation)
+- `docs/DEPLOYMENT.md` — corrected from verified facts: the live site is served by nginx on the VPS and changes only when files are copied there (GitHub Pages is a secondary mirror that rebuilds on every push to `main` and cannot book, because the API's CORS allows only the shop's origin); the booking API runs under systemd, not PM2; the placement, snapshot and rollback procedure of the 2026-11-18 release is written down
 
 ---
 
