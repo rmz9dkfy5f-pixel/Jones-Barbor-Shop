@@ -4,13 +4,15 @@ Community barbershop website for Jones Barber Shop — Joneswood District. Sharp
 
 ## Live Site
 
-> Add GitHub Pages URL here once enabled.
+https://jones-barbor-shop.craftandconscious.com/
+
+(A secondary GitHub Pages copy of `main` is also published; it cannot take bookings. See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).)
 
 ## Stack
 
 - Vanilla HTML, CSS, JavaScript — single file, no build step
 - Static site — no backend, no database, no framework
-- Deployment target: GitHub Pages
+- Deployment target: nginx on the IONOS VPS (files copied by hand; see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)). Bookings go to the separate booking-platform API.
 
 ## Sections
 

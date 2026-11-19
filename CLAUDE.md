@@ -15,7 +15,7 @@ This repository is for the **Jones Barber Shop** website — a static single-pag
 | `docs/ACCESSIBILITY.md` | Accessibility expectations | Semantic HTML, keyboard, focus, ARIA, contrast |
 | `docs/PERFORMANCE.md` | Performance rules | Image strategy, loading, CDN dependencies |
 | `docs/TESTING.md` | QA checklist | Manual testing steps before each push |
-| `docs/DEPLOYMENT.md` | Release and deploy process | GitHub Pages steps, rollback, environment |
+| `docs/DEPLOYMENT.md` | Release and deploy process | VPS (nginx) placement steps, rollback, environment |
 | `docs/VERSIONING.md` | Version bump rules | MAJOR/MINOR/PATCH decisions, release notes |
 | `plans/` | Active task plans | Scoped execution, slice approval, validation |
 
