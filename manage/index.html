@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manage your appointment | Jones Barber Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <!-- The link's token sits after the # in the address until the widget removes it: send no referrer. -->
+  <meta name="referrer" content="no-referrer" />
+  <link rel="stylesheet" href="../assets/booking-widget.544f5b4b.css" />
+  <!-- The shop theme comes AFTER the widget stylesheet (equal specificity, so order decides). -->
+  <link rel="stylesheet" href="../assets/booking-widget.theme.856c0ad2.css" />
+  <style>
+    html { background: #050509; }
+    body {
+      margin: 0;
+      padding: 24px 16px 48px;
+      background: #050509;
+      color: #f5f1e8;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+    }
+    main { max-width: 560px; margin: 0 auto; }
+    h1 { font-size: 1.5rem; margin: 0 0 4px; }
+    .shop-note { margin: 0 0 20px; color: #a09884; }
+    .shop-note a { color: #f5b544; }
+    .shop-note a:focus-visible { outline: 3px solid #f5f1e8; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Manage your appointment</h1>
+    <p class="shop-note">Jones Barber Shop. <a href="../">Back to the shop's page</a></p>
+    <div id="booking-widget">
+      <noscript>This page needs JavaScript. To change or cancel your appointment, please contact the shop.</noscript>
+    </div>
+  </main>
+  <!-- No analytics, tag manager, chat widget, font host or other third-party request on this page. -->
+  <script src="../assets/booking-widget.9fe9bce3.js"
+          data-mode="manage"
+          data-container="booking-widget"
+          data-api-url="https://jones-barbor-shop.craftandconscious.com/api"></script>
+</body>
+</html>
