@@ -7,6 +7,11 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Se
 
 ## [Unreleased]
 
+### Added (2026-11-22; LIVE on the server, owner: "place the Jones manage page")
+- `manage/index.html` — the customer manage page (`https://jones-barbor-shop.craftandconscious.com/manage/`): the booking widget in `data-mode="manage"`, where a customer opens the emailed link `/manage/#<token>` to see the booking, cancel it or move it to another time. `noindex`, `referrer no-referrer`, no third-party request (no font host, no analytics); the token stays after the `#` and the widget removes it from the address. `data-resend-link` is off until the shop's email is on. It is not linked from any page and no email is sent yet (R-018), so nothing points to it.
+- `assets/booking-widget.9fe9bce3.js`, `assets/booking-widget.544f5b4b.css` — the widget build that has manage mode (booking-platform `f8848e0`; SHA-256 `9fe9bce3…` and `544f5b4b…`, the same bytes the end-to-end proof drove). The manage page loads them with the existing theme `assets/booking-widget.theme.856c0ad2.css`. The booking page `index.html` still loads the 2026-11-18 files; it is unchanged.
+- Placed on the VPS with the parallel-page pattern (read-only preflight, `.part` then `mv -n`, `root:root` 644, server-side SHA-256 equal to the name, assets first and the page last). Undo: `rm --` of those three paths and the `manage` directory; no restart or reload.
+
 ### Added (2026-11-18; the three assets were first placed on the server as an unlinked preview, then used by the live page)
 - `assets/booking-widget.39815412.js`, `assets/booking-widget.70e439a1.css` — the rebuilt booking widget (grouped times, accessibility, "Add to calendar") and its stylesheet, built from booking-platform commit `fed5f34`; file names carry the first 8 hex of each file's SHA-256 so browsers cannot mix old and new files
 - `assets/booking-widget.theme.856c0ad2.css` — the shop's dark gold theme as the widget's `--bw-*` colour variables (WCAG 2.1 AA; five values nudged to pass: red button, "no times" text, input border, focus ring, error text)
